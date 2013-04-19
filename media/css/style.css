@@ -12,7 +12,7 @@
 
 }
 
-/* BODY */
+/* GENERAL */
 
 body {
 	background-image:url(../../images/structured/background.jpg);
@@ -60,6 +60,36 @@ body {
 	clear:both;
 }
 
+/* HEADER */
+
+#header {
+	width:856px;
+	height:100px;
+}
+
+#header .logo {
+	float:left;
+}
+
+#header .link {
+	float:right;
+}
+
+#header .link span{
+	color:white;
+	font-family:Arial, Helvetica;
+	font-size:12px;
+}
+
+#header .link a {
+	text-decoration:none;
+	font-style:normal;
+}
+
+#header .link a:hover {
+	text-decoration: underline;
+}
+
 /* FORMULAIRE */
 
 #form {
@@ -85,7 +115,6 @@ body {
 	cursor: pointer;
 	border: none;
 	color : transparent;
-	font-size:0px;
 	margin-top:20px;
 }
 
@@ -96,10 +125,20 @@ body {
 	cursor: pointer;
 	border: none;
 	color : transparent;
-	font-size:0px;
 	margin-top:20px;
 	margin-left:auto;
 	margin-right:auto;
+}
+
+#header .search input[id=rechercher]{
+	background: url(../../images/structured/loupe.png) no-repeat center center;
+	width:32px;
+	height:32px;
+	border:none;
+	cursor: pointer;
+	color : transparent;
+	margin-right:auto;
+	margin-top:0;
 }
 
 #form .form_champs {
@@ -116,6 +155,47 @@ body {
 	width:270px;
 	margin-left:auto;
 	margin-right:auto;
+}
+
+/* SEARCH */
+
+#header .search {
+	float:right;
+	width: 200px;
+	height:35px;
+	background-color:#9f577a;
+	margin:50px 5px 5px 5px;
+	padding:3px 3px 3px 3px;
+	border-radius:10px;
+}
+
+#header .search input[id=search]{
+	margin-top:6px;
+	margin-left:3px;
+}
+
+/* MENU */
+
+#menu {
+	width:654px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#menu span {
+	font-family:'corbenregular';
+	font-size:20px;
+	background-color:#9f577a;
+	border-radius:10px 10px 0 0;
+}
+
+/* CONTENT */
+
+#content {
+	min-height:100%;
+	background-color:#9f577a;
+	border-radius:10px;
+	padding:5px 5px 5px 5px;
 }
 
 /* FOOTER */
@@ -148,6 +228,11 @@ body {
 #footer a {
 	color:white;
 	font-family:'corbenregular';
+	text-decoration:none;
+}
+
+#footer a:hover {
+	text-decoration: underline;
 }
 
 #footer p {

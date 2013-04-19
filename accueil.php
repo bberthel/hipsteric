@@ -1,29 +1,3 @@
-<?php
-
-// Debut de session
-session_start();
-
-require 'conf/top.php';
-
-// Connexion a la base de donnees
-connectDb();
-
-// Si l'utilisateur est deconnecte : fermeture de la session
-if( isset($_GET['deco']) && $_GET['deco'] == 1){
-		session_destroy();
-}
-
-// Si il y a inscription et si le password est bon : affiche 'inscription réussie'
-// Sinon : affiche 'Erreur lors de l'inscription'
-if(isset($_POST['submit_inscription'])){
-	if($_POST['password'] == $_POST['password_conf']){
-		if(insertUser($_POST['name'],$_POST['password']))
-			echo 'inscription réussie';
-		else echo 'inscription pas réussie';
-	}else echo 'Erreur lors de l\'inscription';
-}
-?>
-
 <html>
     <head>
     	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -37,6 +11,43 @@ if(isset($_POST['submit_inscription'])){
     <body>
     
         <div id="all">
+
+            <div id="header">
+            	<div class="logo">
+                    <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/accueil.php"><img src="images/structured/logo_small.png"></a>
+                </div>
+                
+                <div class="link">
+                    <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/contact.php">Contactez-nous</a></span>
+                    <span>|</span>
+                    <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/compte.php">Mon compte</a></span>
+                    <span>|</span>
+                    <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/panier.php">Mon panier (<?php $nb_produit_panier ?>)</a></span>
+                    <span>|</span>
+                    <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php">Déconnexion</a></span>
+                </div>
+                
+                <div class="search">
+                	<form id="search" name="search" method="post" action="">
+                        <input name="search" type="text" id="search" />
+                        <input id="rechercher" type="submit" src="images/structured/loupe.png" alt="submit" name="submit" />
+                    </form>
+                </div>
+            </div>
+            
+            <div id="menu">
+            	<span>Lunettes</span>
+                <span>Chapeaux</span>
+                <span>Accessoirs</span>
+                <span>Hight Tech</span>
+                <span>Bijoux</span>
+                <span>Divers</span>
+                <span>Packs</span>
+            </div>
+            
+            <div id="content">
+            	
+            </div>                
 
 		</div>
         
