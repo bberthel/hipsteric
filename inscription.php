@@ -44,65 +44,75 @@ if(isset($_POST['submit_inscription'])){
 
             <p>Vous &ecirc;tes sur le point de d&eacute;couvrir la swagitude supr&ecirc;me. <br>
             Remplissez ce formulaire et atteignez l'orgasme moustachique !</p>
-            <br>
+            
             <div id="form">
                 <form method="post" action="">
-                    <div id="form_left">
-                    	<p>Nom :</p>
-                        <p>Pr&eacute;nom :</p>
-                        <p>Mail :</p>
-                        <p>Mot de passe :</p>
-                        <p>Confirmation :</p>
-                     	<p>T&eacute;l&eacute;phone :</p>
-                        <br>
-                        <p>N&deg; :</p>
-                        <p>Nom :</p>
-                        <p>Code postal :</p>
-                        <p>Ville :</p>
+                	<div class="form_champs">
+                    	<span>Nom :</span><input type="text" name="name" />
                     </div>
-                    <div id="form_left">
-                    	<input type="text" name="name" /><br>
-                        <input type="text" name="surname" /><br>
-                        <input type="email" name="mail" /><br>
-                        <input type="password" name="password" /><br>
-                        <input type="password" name="password_confirmation" /><br>
-                        <input type="tel" name="tel" /><br>
-                        <br>
-                        <input type="text" name="number" /><br>
-                        <input type="text" name="adress" /><br>
-                        <input type="text" name="postal_code" /><br>
-                        <input type="text" name="city" />
+                    <div class="form_champs">
+                        <span>Pr&eacute;nom :</span><input type="text" name="surname" />
                     </div>
-                    <div id="clear"></div>
-                    <input type="image" src="images/structured/bouton_inscription.png" alt="submit" name="submit" />
+                    <div class="form_champs">
+                        <span>Mail :</span><input type="email" name="mail" />
+                    </div>
+                    <div class="form_champs">
+                        <span>Mot de passe :</span><input type="password" name="password" />
+                    </div>
+                    <div class="form_champs">
+                        <span>Confirmation :</span><input type="password" name="password_confirmation" />
+                    </div>
+                    <div class="form_champs">
+                     	<span>T&eacute;l&eacute;phone :</span><input type="tel" name="tel" />
+                        <br>
+                    </div>
+                    <div class="form_champs">
+                        <span>N&deg; :</span><input type="text" name="number" />
+                    </div>
+                    <div class="form_champs">
+                        <span>Nom :</span><input type="text" name="adress" />
+                    </div>
+                    <div class="form_champs">
+                        <span>Code postal :</span><input type="text" name="postal_code" />
+                    </div>
+                    <div class="form_champs">
+                        <span>Ville :</span> <input type="text" name="city" />
+                    </div>
+                    <div class="submit">
+                        <input id="inscription" type="submit" src="images/structured/bouton_inscription.png" alt="submit" name="submit" />
+                    </div>
                 </form>
             </div>
-           
-           
-           <p>blablablablablalzfehehfiozfhaNFep</p>
-           <br>
-           <p>blablablablablalzfehehfiozfhaNFep</p>
-           <br>
-           <p>blablablablablalzfehehfiozfhaNFep</p>
-           <br>
-           <p>blablablablablalzfehehfiozfhaNFep</p>
+            
+            <div id="clear"></div>
+
+			<div id="push"></div>
+
 		</div>
         
         <div id="fond_footer">
+        
         	<div id="footer">
+            
             	<div id="corps_footer">
+                
                     <div id="footer_left">
                         <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php"> Hipsteric.com </a>
                     </div>
+                    
                     <div id="footer_right">
                         <p>Retrouvez nous sur les réseaux sociaux :</p>
                         <a href=""><img src="images/structured/facebook.png" alt="Facebook"></a>
                         <a href=""><img src="images/structured/twitter.png" alt="Facebook"></a>
                         <a href=""><img src="images/structured/you_tube.png" alt="Facebook"></a>
                     </div>
+                    
                     <div id="clear"></div>
+                    
                 </div>
+                
             </div>
+            
         </div>
         
     </body>
