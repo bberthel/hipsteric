@@ -1,0 +1,152 @@
+{% extends "layout/base.html" %}
+{% block title %} Recherche {% endblock %}
+
+{% block content %}
+
+<script src="media/jquery.js"></script>
+<script>
+window.onload = function() {
+    $('#submit-search').click(function(e) {
+        e.preventDefault();
+        var form_keyword = $('#keyword').val();
+        $.ajax({
+               type: "GET",
+               url: "traitement_search.php",
+               data: {keyword:form_keyword},
+               success: function(data){
+				   var plats = eval('(' + data + ')');
+				   for(var plat in plats){
+					   alert(plat[0]);
+				   }
+               }
+        });
+    });
+}
+</script>
+<div id="intro" class="small">
+        <h1>TD 06 - Création d'un moteur de recherche <small>(2)</small></h1>
+        <p class="lead">Au cours de ce td, nous allons réutiliser un modèle de base de données relationnelle déjà
+étudié, pour créer un moteur de recherche et utiliser différentes requêtes SQL.</p>
+	<p> {{ pseudo }} (<a href="index.php?deco=1">Déconnexion</a>)</p>
+    </div>
+ <div id="search">
+        <form method="get" action="#" class="form-inline">
+            <div class="form-elem">
+                <div>Filtrer par menu</div>
+                <select name="menu">
+                    <option value="">---</option>
+                    {% for menu in menus %} 
+                        {% set selected = "" %}
+                        {% if menu_get == menu.id_menu %} 
+                            {% set selected = "selected" %}
+                        {% endif %}
+                        <option {{ selected }} value="{{ menu.id_menu }}">{{ menu.nom }} </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-elem">
+                <div>Ordonner les résultats</div>
+                <select name="orderby">
+                    <option value="">---</option>
+                    {% set selected_desc = "" %}
+                    {% set selected_prix = "" %}
+                    {% if orderby_get == "nom" %}
+                    	{% set selected_desc = "selected" %}
+                    {% elseif orderby_get == "prix" %}
+                    	{% set selected_prix = "selected" %}
+                    {% endif %}
+                    
+                    <option value="alpha_n" >Ordre alphabétique (nom)</option>
+                    <option value="alpha_d" {{ selected_desc }}>Ordre alphabétique (description)</option>
+                    <option value="price" {{ selected_prix }} >Prix</option>
+                </select>
+            </div>
+            <div class="form-elem">
+                <div>Nombre de résultats à afficher</div>
+                <select name="limit">
+                    <option value="">---</option>
+                    {% for nb_result in nb_results %}
+                    	{% set selected = "" %}
+                    	{% if limit_get == nb_result %}
+                        	{% set selected = "selected" %}
+                         {% endif %}
+                    	<option value ="{{ nb_result }}"  {{ selected }}> {{ nb_result }} </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-elem">
+                <div>Type de plat</div>
+                {% for type in types %}
+                	{% set checked = "" %}
+                    {% for type_get in types_get %}
+                    	{% if type_get == type.id_type %}
+                        	{% set checked = "checked" %}
+                        {% endif %}
+                    {% endfor %}
+                
+                    <label class="checkbox">
+                        <input type="checkbox" {{ checked }} name="type[]" value="{{ type.id_type }}" /> {{ type.nom }}
+                    </label>
+                {% endfor %}
+               
+            </div>
+
+            <div class="form-elem">
+                <div>Recherche</div>
+                <input type="text" name="keyword"  value="{{ keyword_get }}" placeholder="Entrer un mot clé..." />
+            </div>
+            <div class="form-elem-submit">
+                <input type="submit" value="Rechercher" class="btn btn-primary" id="submit-search"/>
+            </div>
+        </form>
+    </div>
+
+    <div id="results">
+    	{% if count_plats > 0 %}
+     
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Prix (€)</th>
+                    <th>Menu</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for plat in plats %}
+                    <tr>
+                        <td>{{ plat.nom }}</td>
+                        <td>{{ plat.description }}</td>
+                        <td>{{ plat.prix }}</td>
+                        <td>{{ plat.menu }}</td>
+                        <td>{{ plat.type }}</td>
+                    </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+        {% else %}
+       
+            <p>Aucun résultat n'a été trouvé.</p>
+        {% endif %}
+       
+    </div>
+    <div id="footer">
+        <dl class="dl-horizontal">
+          <dt>TD</dt>
+          <dd>IMAC1 - TD 06</dd>
+          <dt>Contact</dt>
+          <dd>aliceloeser.cours@gmail.com</dd>
+          <dt>Etape 1</dt>
+          <dd><a href="search_simple.php">search_simple.php</a></dd>
+          <dt>Etape 2</dt>
+          <dd><a href="search.php">search.php</a></dd>
+          <dt>Script d'indexation</dt>
+          <dd><a href="indexation.php">indexation.php</a></dd>
+        </dl>
+    </div>
+    
+{% endblock %}
