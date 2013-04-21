@@ -91,28 +91,19 @@ if(isset($_POST['submit_inscription'])){
 		</div>
         
         <div id="fond_footer">
-        
         	<div id="footer">
-            
             	<div id="corps_footer">
                 
-                    <div id="footer_left">
+                   <div class="footer_section">
                         <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php"> Hipsteric.com </a>
-                    </div>
-                    
-                    <div id="footer_right">
-                        <p>Retrouvez nous sur les réseaux sociaux :</p>
+                        <span>Retrouvez nous sur les réseaux sociaux :</span>
                         <a href=""><img src="images/structured/facebook.png" alt="Facebook"></a>
                         <a href=""><img src="images/structured/twitter.png" alt="Facebook"></a>
                         <a href=""><img src="images/structured/you_tube.png" alt="Facebook"></a>
                     </div>
                     
-                    <div id="clear"></div>
-                    
                 </div>
-                
             </div>
-            
         </div>
         
     </body>
