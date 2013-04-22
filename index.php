@@ -78,7 +78,6 @@ if(isset($_POST['submit_login'])){
         <div id="fond_footer">
         	<div id="footer">
             	<div id="corps_footer">
-                
                    <div class="footer_section">
                         <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php"> Hipsteric.com </a>
                         <span>Retrouvez nous sur les réseaux sociaux :</span>
@@ -86,7 +85,6 @@ if(isset($_POST['submit_login'])){
                         <a href=""><img src="images/structured/twitter.png" alt="Facebook"></a>
                         <a href=""><img src="images/structured/you_tube.png" alt="Facebook"></a>
                     </div>
-                    
                 </div>
             </div>
         </div>

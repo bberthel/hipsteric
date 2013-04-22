@@ -46,47 +46,25 @@
             </div>
             
             <div id="content">
-            	<div class="categorie">Promotions du moment</div>
+            
+            	<div class="page_contact">Une question, une petite cass'dédi, une info qui manque ? Check-nous boloss !</div>
+            	
+                <form method="post" action="">
+					<label for="objet" class="champs">Objet :</label>
+                       <select name="objet" id="objet" class="list_choice">
+                           <option value="probleme_commande">Problème de commande</option>
+                           <option value="probleme_livraison">Problème de livraison</option>
+                           <option value="probleme_technique">Problème technique (sur notre site)</option>
+                           <option value="demande_info">Demande d'information(s)</option>
+                           <option value="avis">Avis de consommateur</option>
+                       </select>
+					<div class="clear"></div>
+					<label for="message" class="champs">Message :</label><textarea cols="50" rows="7" name="message" id="message"></textarea>
+					<div class="clear"></div>
+                    <input id="soumission" type="submit" src="images/structured/bouton_soumission.png" alt="submit" name="submit" />
+					<span class="note"> * aucun rapport sexuel </span>
+				</form>
                 
-                <div class="produit">
-                    <img src="images/lunettes-hipster.jpg" title="Lunettes : Pixels">
-                    <span class="nom_produit">Pixels</span>
-                    <span class="prix_produit">Prix€</span>
-                    <span class="type_produit">#lunettes</span>
-                    <div class="info_img"><img src="images/structured/info.png"></div>
-                    <span class="info_produit"><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes-pixels.php">Plus d'informations</a></span>
-                    <div class="ajout_panier" title="Ajouter au panier"></div>
-                </div>
-                
-                <div class="produit">
-					<img src="images/tumblr_m48qz6kmTy1qfkglvo1_500.jpg" title="Lunettes : Retro">
-                    <span class="nom_produit">Retro</span>
-                    <span class="prix_produit">Prix€</span>
-                    <span class="type_produit">#lunettes</span>
-                    <div class="info_img"><img src="images/structured/info.png"></div>
-                    <span class="info_produit"><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes-retro.php">Plus d'informations</a></span>
-                    <div class="ajout_panier title="Ajouter au panier""></div>
-                </div>
-                
-                <div class="produit">
-                    <img src="images/100329_les_commandements_du_hipster_aspx_ss_image_10_jpg_902484264_north_320x.jpg" title="Lunettes : Red John">
-                	<span class="nom_produit">Red John</span>
-                    <span class="prix_produit">Prix€</span>
-                    <span class="type_produit">#lunettes</span>
-                    <div class="info_img"><img src="images/structured/info.png"></div>
-                    <span class="info_produit"><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes-redjohn.php">Plus d'informations</a></span>
-                    <div class="ajout_panier title="Ajouter au panier""></div>
-                </div>
-                
-                <div class="produit">
-                    <img src="images/hipster_tee.jpg" title="T-shirt : Yesterday 1965">
-                	<span class="nom_produit">Yesterday 1965</span>
-                    <span class="prix_produit">Prix€</span>
-                    <span class="type_produit">#t-shirt</span>
-                    <div class="info_img"><img src="images/structured/info.png"></div>
-                    <span class="info_produit"><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/t-shirt-yesterday1965.php">Plus d'informations</a></span>
-                    <div class="ajout_panier title="Ajouter au panier""></div>
-                </div>
             </div>
 		</div>
         

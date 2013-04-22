@@ -212,7 +212,7 @@ body {
 /* CONTENT */
 
 #content {
-	min-height:100%;
+	min-height:500px;
 	background-color:#FFF;
 	border-radius:10px;
 	padding: 15px 10px 15px 10px;
@@ -256,7 +256,46 @@ body {
 	text-align:right;
 	font-family:'corbenregular';
 	font-size:16px;
+	color:#9f577a;
 	width:175px;
+}
+
+#content .type_produit {
+	float:left;
+	text-align:left;
+	font-family:'corbenregular';
+	font-size:12px;
+	color:#9f577a;
+	width:360px;
+}
+
+#content .info_produit {
+	float:left;
+	text-align:left;
+	font-family: Arial;
+	font-size:10px;
+	color:#CCC;
+	padding-top:5px;
+}
+
+#content .info_produit a {
+	float:left;
+	text-align:left;
+	font-family: Arial;
+	font-size:10px;
+	color:#CCC;
+	text-decoration:none;
+	font-style:normal;
+}
+
+#content .info_produit a:hover {
+	text-decoration: underline;
+}
+
+#content .info_img {
+	width:12px;
+	float:left;
+	margin-right:5px;
 }
 
 #content .produit img {
@@ -285,6 +324,85 @@ body {
 #content .ajout_panier:hover {
 	background-image:url(../../images/structured/panier_color.png);
 	cursor: pointer;
+}
+
+/* FORMULAIRE CONTACT */
+
+#content form{
+	width: 535px;
+	margin: 0 auto;
+	padding-top: 15px;
+}
+
+#content label{
+	font-family:'corbenregular';
+	display: block;
+	float: left;
+	width: 90px;
+	margin-right: 10px;
+	font-size: 18px;
+}
+
+#content .input_text{
+	width: 200px;
+}
+
+#content .input_text, textarea{
+	float: left;
+	background-color : #9f577a;
+	-moz-border-radius: 1em; 
+    -webkit-border-radius: 10px 0 10px 0;
+	box-shadow:0px 0px 0px grey;
+	border: none;
+	padding-left:10px;
+	font-family:Arial;
+	font-size:16px;
+	color:white;
+	outline-color:#dddddd;
+	width:535px;
+}
+
+#content label, .input_text{
+	margin-bottom: 5px;
+	height: 20px;
+}
+
+select#objet{
+	font-family:Arial;
+	font-size:16px;
+	color:white;
+	background-color: #9f577a;
+	border:none;
+	outline-color:#dddddd;
+}
+
+#content input[id=soumission]{
+	background: url(../../images/structured/bouton_soumission.png) no-repeat center center;
+	width:271px;
+	height:54px;
+	cursor: pointer;
+	border: none;
+	color : transparent;
+	margin-left:264px;
+	margin-top:10px;
+}
+
+.note{
+	font-family:Arial;
+	font-size: 12px;
+	color: #999;
+	font-style:italic;
+	float:right;
+	text-align:right;
+}
+
+#content .page_contact {
+	font-family: 'corbenregular';
+	font-size: 20px;
+	color: #000;
+	width:722px;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 /* FOOTER */
