@@ -1,15 +1,24 @@
 <html>
     <head>
     	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    	<link rel="stylesheet" type="text/css" href="media/css/style.css">
+    	<link rel="stylesheet" type="text/css" href="media/css/zoom_produit.css">
+        <link href="media/zoombox/zoombox.css" rel="stylesheet" type="text/css" media="screen" />
         <link rel="shortcut icon" href="images/structured/favicon.png" type="image/x-icon" /> 
 		<title>Hipsteric</title>
         <meta name="Description" content="Site de vente swag, pour une élite à moustache et rouge à lèvre.">
 		<meta name="Keywords" content="hipster swag moustache stachmou vente vêtements t-shirt lunette bijoux accessoire high tech appareil photo">
         
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="media/zoombox/zoombox.js"></script>
     </head>
     
     <body>
+    
+    <script type="text/javascript">
+		jQuery(function($){
+			$('a.zoombox').zoombox();
+		});
+    </script>
     
         <div id="all">
 
@@ -47,66 +56,48 @@
             </div>
             
             <div id="content">
-            	<div class="categorie">Promotions du moment<img src="images/structured/moustache.png"></div>
-                
-                <div class="produit">
-                    <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes-pixels.php"><img src="images/lunettes-hipster.jpg" title="Lunettes : Pixels"></a>
-                    <span class="nom_produit">Pixels</span>
-                    <span class="prix_produit">Prix€</span>
-                    <span class="type_produit">#lunettes</span>
+            	<div id="haut">
+                    <a href="images/lunettes-hipster.jpg" class="zoombox zgallery1"><img src="images/lunettes-hipster.jpg" title="Cliquez pour zoomer"></a>
+                    <a href="images/structured/lunettes-pixels/blue-dark.jpg" class="zoombox zgallery1"><img class="zoombox" src="images/structured/lunettes-pixels/blue-dark.jpg" title="Cliquez pour zoomer" height="50px"></a>
+                    <a href="images/structured/lunettes-pixels/red-dark.jpg" class="zoombox zgallery1"><img class="zoombox" src="images/structured/lunettes-pixels/red-dark.jpg" title="Cliquez pour zoomer" height="50px"></a>
+                    
                     <div class="info_produit">
-                    	<div class="info_img"><img src="images/structured/info.png"></div>
-                   		<a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes-pixels.php">Plus d'informations</a>
+                    	<span class="nom_produit">Pixel</span>
+                        <span class="type_produit">#lunettes</span>
+                        <span class="infosup_produit">noir</span>
+                        <span class="infosup_produit">vert</span>
+                        <span class="infosup_produit">bleu</span>
+                        <span class="infosup_produit">rouge</span>
+                        <span class="infosup_produit">pixel</span>
+                        <span class="infosup_produit">plastique</span>
                     </div>
-                    <div class="ajout_produit">
+                    
+                    <div class="prix_produit">
+                    	115€
+                    </div>
+                    
+                   <div class="ajout_produit">
                     	<div class="ajout_img"><img src="images/structured/ajout_panier.png"></div>
-                        <a href="">Ajout panier</a>
+                        <a href="">Ajouter à mon panier</a>
+                   </div>
+                   
+                   <div class="quantite_produit">
+                        <form id="quantite" name="quantite" method="post" action="">
+                            Quantité : <input name="quantite" type="text" id="quantite" value="1" />
+                        </form>
                     </div>
                 </div>
                 
-                <div class="produit">
-					<img class="zoombox" src="images/tumblr_m48qz6kmTy1qfkglvo1_500.jpg" title="Lunettes : Retro">
-                    <span class="nom_produit">Retro</span>
-                    <span class="prix_produit">Prix€</span>
-                    <span class="type_produit">#lunettes</span>
-                    <div class="info_produit">
-                        <div class="info_img"><img src="images/structured/info.png"></div>
-                        <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes-retro.php">Plus d'informations</a>
-                    </div>
-                    <div class="ajout_produit">
-                    	<div class="ajout_img"><img src="images/structured/ajout_panier.png"></div>
-                        <a href="">Ajout panier</a>
-                    </div>
-                </div>
-                                
-                <div class="produit">
-                    <img class="zoombox" src="images/100329_les_commandements_du_hipster_aspx_ss_image_10_jpg_902484264_north_320x.jpg" title="Lunettes : Red John">
-                	<span class="nom_produit">Red John</span>
-                    <span class="prix_produit">Prix€</span>
-                    <span class="type_produit">#lunettes</span>
-                    <div class="info_produit">
-                        <div class="info_img"><img src="images/structured/info.png"></div>
-                        <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes-redjohn.php">Plus d'informations</a>
-                    </div>
-                    <div class="ajout_produit">
-                    	<div class="ajout_img"><img src="images/structured/ajout_panier.png"></div>
-                        <a href="">Ajout panier</a>
-                    </div>
-                </div>
+                <div id="clear"></div>
                 
-                <div class="produit">
-                    <img class="zoombox" src="images/hipster_tee.jpg" title="T-shirt : Yesterday 1965">
-                	<span class="nom_produit">Yesterday 1965</span>
-                    <span class="prix_produit">Prix€</span>
-                    <span class="type_produit">#t-shirt</span>
-                    <div class="info_produit">
-                        <div class="info_img"><img src="images/structured/info.png"></div>
-                        <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/t-shirt-yesterday1965.php">Plus d'informations</a>
-                    </div>
-                    <div class="ajout_produit">
-                    	<div class="ajout_img"><img src="images/structured/ajout_panier.png"></div>
-                        <a href="">Ajout panier</a>
-                    </div>
+                <div id="bas">
+                    <span class="title">Description :</span>
+                        Dein Syria per speciosam interpatet diffusa planitiem. hanc nobilitat Antiochia, mundo cognita civitas,
+                        cui non certaverit alia advecticiis ita adfluere copiis et internis, et Laodicia et Apamia itidemque
+                        Seleucia iam inde a primis auspiciis florentissimae.<br>
+                        Hanc regionem praestitutis celebritati diebus invadere parans dux ante edictus per solitudines Aboraeque
+                        amnis herbidas ripas, suorum indicio proditus, qui admissi flagitii metu exagitati ad praesidia descivere
+                        Romana. absque ullo egressus effectu deinde tabescebat immobilis.
                 </div>
             </div>
 		</div>
