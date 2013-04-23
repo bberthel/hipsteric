@@ -1,27 +1,32 @@
 <?php
-
-// Debut de session
 session_start();
 
+// Debut de session
+
 require 'conf/top.php';
+require 'lib/user.php';
+
 
 // Connexion a la base de donnees
 connectDb();
 
-// Si l'utilisateur est deconnecte : fermeture de la session
 if( isset($_GET['deco']) && $_GET['deco'] == 1){
-		session_destroy();
+        session_destroy();
 }
 
-// Si il y a inscription et si le password est bon : affiche 'inscription réussie'
-// Sinon : affiche 'Erreur lors de l'inscription'
 if(isset($_POST['submit_inscription'])){
-	if($_POST['password'] == $_POST['password_conf']){
-		if(insertUser($_POST['name'],$_POST['password']))
-			echo 'inscription réussie';
-		else echo 'inscription pas réussie';
-	}else echo 'Erreur lors de l\'inscription';
+    echo 'coucou';
+    var_dump($_POST);
+    if($_POST['password'] == $_POST['password_confirmation']){
+
+        if(insertUser($_POST['name'],$_POST['firstname'],$_POST['mail'],$_POST['password'],$_POST['tel'],$_POST['number'],$_POST['adress'],$_POST['postal_code'],$_POST['city'])){
+            echo 'inscription réussie';
+        }
+        else echo 'inscription pas réussie';
+    }else echo 'bouh mauvais password conf';
 }
+
+
 ?>
 
 <html>
@@ -39,72 +44,47 @@ if(isset($_POST['submit_inscription'])){
         <div id="all">
         
             <div id="logo_tall">
-                <img src="images/structured/logo_tall.png" width="411" height="182" alt="Hipsteric">
-            </div>
+                 <img src="images/structured/logo_tall.png" width="411" height="182" alt="Hipsteric">
+           </div>
 
             <p>Vous &ecirc;tes sur le point de d&eacute;couvrir la swagitude supr&ecirc;me. <br>
             Remplissez ce formulaire et atteignez l'orgasme moustachique !</p>
-            
+            <br>
             <div id="form">
                 <form method="post" action="">
-                	<div class="form_champs">
-                    	<span>Nom :</span><input type="text" name="name" />
-                    </div>
-                    <div class="form_champs">
-                        <span>Pr&eacute;nom :</span><input type="text" name="surname" />
-                    </div>
-                    <div class="form_champs">
-                        <span>Mail :</span><input type="email" name="mail" />
-                    </div>
-                    <div class="form_champs">
-                        <span>Mot de passe :</span><input type="password" name="password" />
-                    </div>
-                    <div class="form_champs">
-                        <span>Confirmation :</span><input type="password" name="password_confirmation" />
-                    </div>
-                    <div class="form_champs">
-                     	<span>T&eacute;l&eacute;phone :</span><input type="tel" name="tel" />
+                    <div id="form_left">
+                    	<p>Nom :</p>
+                        <p>Pr&eacute;nom :</p>
+                        <p>Mail :</p>
+                        <p>Mot de passe :</p>
+                        <p>Confirmation :</p>
+                     	<p>T&eacute;l&eacute;phone :</p>
                         <br>
+                        <p>N&deg; :</p>
+                        <p>Nom :</p>
+                        <p>Code postal :</p>
+                        <p>Ville :</p>
                     </div>
-                    <div class="form_champs">
-                        <span>N&deg; :</span><input type="text" name="number" />
+                    <div id="form_left">
+                    	<input type="text" name="name" /><br>
+                        <input type="text" name="firstname" /><br>
+                        <input type="email" name="mail" /><br>
+                        <input type="password" name="password" /><br>
+                        <input type="password" name="password_confirmation" /><br>
+                        <input type="text" name="tel" /><br>
+
+                        <br>
+                        <input type="text" name="number" /><br>
+                        <input type="text" name="adress" /><br>
+                        <input type="text" name="postal_code" /><br>
+                        <input type="text" name="city" />
                     </div>
-                    <div class="form_champs">
-                        <span>Nom :</span><input type="text" name="adress" />
-                    </div>
-                    <div class="form_champs">
-                        <span>Code postal :</span><input type="text" name="postal_code" />
-                    </div>
-                    <div class="form_champs">
-                        <span>Ville :</span> <input type="text" name="city" />
-                    </div>
-                    <div class="submit">
-                        <input id="inscription" type="submit" src="images/structured/bouton_inscription.png" alt="submit" name="submit" />
-                    </div>
+                    <div id="clear"></div>
+                    <input type="submit" src="images/structured/bouton_inscription.png" alt="submit" name="submit_inscription" />
                 </form>
             </div>
-            
-            <div id="clear"></div>
-
-			<div id="push"></div>
-
+           
 		</div>
-        
-        <div id="fond_footer">
-        	<div id="footer">
-            	<div id="corps_footer">
-                
-                   <div class="footer_section">
-                        <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php"> Hipsteric.com </a>
-                        <span>Retrouvez nous sur les réseaux sociaux :</span>
-                        <a href=""><img src="images/structured/facebook.png" alt="Facebook"></a>
-                        <a href=""><img src="images/structured/twitter.png" alt="Facebook"></a>
-                        <a href=""><img src="images/structured/you_tube.png" alt="Facebook"></a>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
         
     </body>
 </html>

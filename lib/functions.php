@@ -1,6 +1,5 @@
 <?php
 
-	// Fonction de connexion a la base de donnees
 	function connectDb() {
 		try {
         	$db = mysql_connect(DB_SERVER . ':' . DB_PORT, DB_USER, DB_PASS);
@@ -11,7 +10,6 @@
         }
     }
 
-	// Fonction pour stocker les resultats dans un tableau	
     function fetch($sql) {
 		$result = mysql_query($sql);
 		$results = array() ;
