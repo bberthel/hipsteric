@@ -1,10 +1,13 @@
 <?php
 
-define('DB_SERVER', 'sqletud.univ-mlv.fr');
-define('DB_USER', 'bberthel');
-define('DB_PASS', 'pYia4aag');
-define('DB_BASE', 'bberthel_db');
+// à remplir !
+
+define('DB_SERVER', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', 'root');
+define('DB_BASE', 'hipsteric');
 define('DB_PORT', '');
 
 define('LIB_PATH', 'lib/');
 define('MEDIA_PATH', 'media/');
+
