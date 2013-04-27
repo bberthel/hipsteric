@@ -60,6 +60,17 @@ body {
 	clear:both;
 }
 
+/*clearfix*/
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
 /* HEADER */
 
 #header {
@@ -90,7 +101,7 @@ body {
 	text-decoration: underline;
 }
 
-/* FORMULAIRE */
+/* FORMULAIRE CONNEXION & INSCRIPTION */
 
 #form {
 	margin-left:auto;
@@ -156,7 +167,7 @@ body {
 	margin-right:auto;
 }
 
-/* SEARCH */
+/* RECHERCHE HEADER */
 
 #header .search {
 	float:right;
@@ -165,7 +176,7 @@ body {
 	background-color:#9f577a;
 	margin:50px 5px 5px 5px;
 	padding:3px 3px 3px 3px;
-	border-radius:10px;
+	border-radius:10px 0 10px 0;
 }
 
 #header .search input[id=search]{
@@ -176,7 +187,7 @@ body {
 /* MENU */
 
 #menu {
-	width:705px;
+	width:710px;
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:10px;
@@ -250,7 +261,7 @@ body {
 
 #content .produit img {
 	max-width:350px;
-	max-height:350px;
+	max-height:235px;
 	border-radius:10px 0 10px 0;
 	display:block;
 	margin-left:auto;
@@ -335,22 +346,23 @@ body {
 	margin-right:3px;
 }
 
-
 /* FORMULAIRE CONTACT */
 
 #content form{
 	width: 535px;
 	margin: 0 auto;
 	padding-top: 15px;
+	font-family:Arial;
+	font-size:16px;
 }
 
 #content label{
-	font-family:'corbenregular';
+	font-family:Arial;
 	display: block;
 	float: left;
 	width: 90px;
 	margin-right: 10px;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 #content .input_text{
@@ -359,31 +371,32 @@ body {
 
 #content .input_text, textarea{
 	float: left;
-	background-color : #9f577a;
+	background-color : white;
 	-moz-border-radius: 1em; 
-    -webkit-border-radius: 10px 0 10px 0;
-	box-shadow:0px 0px 0px grey;
-	border: none;
-	padding-left:10px;
+    -webkit-border-radius:10px;
+	border: 1px solid #999;
+	padding:10px;
 	font-family:Arial;
 	font-size:16px;
-	color:white;
-	outline-color:#dddddd;
+	outline-color: #9f577a;
 	width:535px;
+}
+
+#content form #objet{
+	background-color : white;
+	-moz-border-radius: 1em; 
+    -webkit-border-radius:5px;
+	padding-left:5px;
+	padding-right:5px;
+	border: 1px solid #999;
+	font-family:Arial;
+	font-size:16px;
+	outline-color: #9f577a;
 }
 
 #content label, .input_text{
 	margin-bottom: 5px;
 	height: 20px;
-}
-
-select#objet{
-	font-family:Arial;
-	font-size:16px;
-	color:white;
-	background-color: #9f577a;
-	border:none;
-	outline-color:#dddddd;
 }
 
 #content input[id=soumission]{
@@ -407,10 +420,11 @@ select#objet{
 }
 
 #content .page_contact {
-	font-family: 'corbenregular';
-	font-size: 20px;
+	font-family:Arial;
+	font-size: 16px;
 	color: #000;
-	width:722px;
+	text-align:center;
+	width:700px;
 	margin-left:auto;
 	margin-right:auto;
 }

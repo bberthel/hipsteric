@@ -24,7 +24,7 @@
 
             <div id="header">
             	<div class="logo">
-                    <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/accueil.php"><img src="images/structured/logo_small.png"></a>
+                    <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php"><img src="images/structured/logo_small.png"></a>
                 </div>
                 
                 <div class="link">
@@ -34,7 +34,7 @@
                     <span>|</span>
                     <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/panier.php">Mon panier (<?php $nb_produit_panier ?>)</a></span>
                     <span>|</span>
-                    <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php">Déconnexion</a></span>
+                    <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php">Connexion</a></span>
                 </div>
                 
                 <div class="search">
@@ -48,8 +48,8 @@
             <div id="menu">
             	<span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes.php">Lunettes</a></span>
                 <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/chapeaux.php">Chapeaux</a></span>
-                <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/accessoirs.php">Accessoirs</a></span>
-                <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/high-tech.php">Hight Tech</a></span>
+                <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/accessoirs.php">Accessoires</a></span>
+                <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/high-tech.php">High Tech</a></span>
                 <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/bijoux.php">Bijoux</a></span>
                 <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/divers.php">Divers</a></span>
                 <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/packs.php">Packs</a></span>
@@ -57,34 +57,39 @@
             
             <div id="content">
             	<div id="haut">
-                    <a href="images/lunettes-hipster.jpg" class="zoombox zgallery1"><img src="images/lunettes-hipster.jpg" title="Cliquez pour zoomer"></a>
-                    <a href="images/structured/lunettes-pixels/blue-dark.jpg" class="zoombox zgallery1"><img class="zoombox" src="images/structured/lunettes-pixels/blue-dark.jpg" title="Cliquez pour zoomer" height="50px"></a>
-                    <a href="images/structured/lunettes-pixels/red-dark.jpg" class="zoombox zgallery1"><img class="zoombox" src="images/structured/lunettes-pixels/red-dark.jpg" title="Cliquez pour zoomer" height="50px"></a>
-                    
-                    <div class="info_produit">
-                    	<span class="nom_produit">Pixel</span>
-                        <span class="type_produit">#lunettes</span>
-                        <span class="infosup_produit">noir</span>
-                        <span class="infosup_produit">vert</span>
-                        <span class="infosup_produit">bleu</span>
-                        <span class="infosup_produit">rouge</span>
-                        <span class="infosup_produit">pixel</span>
-                        <span class="infosup_produit">plastique</span>
+                	<div class="image">
+                        <a href="images/lunettes-hipster.jpg" class="zoombox zgallery1"><img src="images/lunettes-hipster.jpg" title="Cliquez pour zoomer"></a>
                     </div>
                     
-                    <div class="prix_produit">
-                    	115€
-                    </div>
-                    
-                   <div class="ajout_produit">
-                    	<div class="ajout_img"><img src="images/structured/ajout_panier.png"></div>
-                        <a href="">Ajouter à mon panier</a>
-                   </div>
-                   
-                   <div class="quantite_produit">
-                        <form id="quantite" name="quantite" method="post" action="">
-                            Quantité : <input name="quantite" type="text" id="quantite" value="1" />
-                        </form>
+                    <div class="texte">
+                        <a href="images/structured/lunettes-pixels/blue-dark.jpg" class="zoombox zgallery1"><img class="zoombox" src="images/structured/lunettes-pixels/blue-dark.jpg" title="Cliquez pour zoomer" height="50px"></a>
+                        <a href="images/structured/lunettes-pixels/red-dark.jpg" class="zoombox zgallery1"><img class="zoombox" src="images/structured/lunettes-pixels/red-dark.jpg" title="Cliquez pour zoomer" height="50px"></a>
+                        
+                        <div class="info_produit">
+                            <span class="nom_produit">Pixel</span>
+                            <span class="type_produit">#lunettes</span>
+                            <span class="infosup_produit">noir</span>
+                            <span class="infosup_produit">vert</span>
+                            <span class="infosup_produit">bleu</span>
+                            <span class="infosup_produit">rouge</span>
+                            <span class="infosup_produit">pixel</span>
+                            <span class="infosup_produit">plastique</span>
+                        </div>
+                        
+                        <div class="prix_produit">
+                            115€
+                        </div>
+                        
+                       <div class="ajout_produit">
+                            <div class="ajout_img"><img src="images/structured/ajout_panier.png"></div>
+                            <a href="">Ajouter à mon panier</a>
+                       </div>
+                       
+                       <div class="quantite_produit">
+                            <form id="quantite" name="quantite" method="post" action="">
+                                Quantité : <input name="quantite" type="text" id="quantite" value="1" />
+                            </form>
+                        </div>
                     </div>
                 </div>
                 
@@ -109,7 +114,7 @@
             	<div id="corps_footer">
                 
                     <div class="footer_section">
-                        <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/accueil.php"> Hipsteric.com </a>
+                        <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php"> Hipsteric.com </a>
                         <span>Retrouvez nous sur les réseaux sociaux :</span>
                         <a href=""><img src="images/structured/facebook.png" alt="Facebook"></a>
                         <a href=""><img src="images/structured/twitter.png" alt="Facebook"></a>
@@ -120,11 +125,11 @@
                     	<span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/inscription.php">Inscription</a></span>
                     	<span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes.php">Lunettes</a></span>
                         <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/chapeaux.php">Chapeaux</a></span>
-                        <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/accessoirs.php">Accessoirs</a></span>
+                        <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/accessoirs.php">Accessoires</a></span>
                     </div>
                     
                     <div class="footer_section">
-                        <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/high-tech.php">Hight Tech</a></span>
+                        <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/high-tech.php">High Tech</a></span>
                         <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/bijoux.php">Bijoux</a></span>
                         <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/divers.php">Divers</a></span>
                         <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/packs.php">Packs</a></span>
@@ -134,7 +139,7 @@
                     	<span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/contact.php">Contactez-nous</a></span>
                         <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/compte.php">Mon compte</a></span>
                         <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/panier.php">Mon panier (<?php $nb_produit_panier ?>)</a></span>
-                        <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php">Déconnexion</a></span>
+                        <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php">Connexion</a></span>
                     </div>
                     
                 </div>

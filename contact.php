@@ -11,10 +11,9 @@
     <body>
     
         <div id="all">
-
             <div id="header">
             	<div class="logo">
-                    <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/accueil.php"><img src="images/structured/logo_small.png"></a>
+                    <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php"><img src="images/structured/logo_small.png"></a>
                 </div>
                 
                 <div class="link">
@@ -24,7 +23,7 @@
                     <span>|</span>
                     <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/panier.php">Mon panier (<?php $nb_produit_panier ?>)</a></span>
                     <span>|</span>
-                    <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php">Déconnexion</a></span>
+                    <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/connexion.php">Connexion</a></span>
                 </div>
                 
                 <div class="search">
@@ -38,8 +37,8 @@
             <div id="menu">
             	<span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes.php">Lunettes</a></span>
                 <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/chapeaux.php">Chapeaux</a></span>
-                <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/accessoirs.php">Accessoirs</a></span>
-                <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/high-tech.php">Hight Tech</a></span>
+                <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/accessoirs.php">Accessoires</a></span>
+                <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/high-tech.php">High Tech</a></span>
                 <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/bijoux.php">Bijoux</a></span>
                 <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/divers.php">Divers</a></span>
                 <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/packs.php">Packs</a></span>
@@ -47,17 +46,11 @@
             
             <div id="content">
             
-            	<div class="page_contact">Une question, une petite cass'dédi, une info qui manque ? Check-nous boloss !</div>
+            	<div class="page_contact">Une question, une petite cass'dédi, une info qui manque ?</div>
+                <div class="page_contact">Check-nous boloss !</div>
             	
                 <form method="post" action="">
-					<label for="objet" class="champs">Objet :</label>
-                       <select name="objet" id="objet" class="list_choice">
-                           <option value="probleme_commande">Problème de commande</option>
-                           <option value="probleme_livraison">Problème de livraison</option>
-                           <option value="probleme_technique">Problème technique (sur notre site)</option>
-                           <option value="demande_info">Demande d'information(s)</option>
-                           <option value="avis">Avis de consommateur</option>
-                       </select>
+					Objet : <input id="objet" type="text" alt="objet" name="objet" />
 					<div class="clear"></div>
 					<label for="message" class="champs">Message :</label><textarea cols="50" rows="7" name="message" id="message"></textarea>
 					<div class="clear"></div>
@@ -75,7 +68,7 @@
             	<div id="corps_footer">
                 
                     <div class="footer_section">
-                        <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/accueil.php"> Hipsteric.com </a>
+                        <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php"> Hipsteric.com </a>
                         <span>Retrouvez nous sur les réseaux sociaux :</span>
                         <a href=""><img src="images/structured/facebook.png" alt="Facebook"></a>
                         <a href=""><img src="images/structured/twitter.png" alt="Facebook"></a>
@@ -86,11 +79,11 @@
                     	<span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/inscription.php">Inscription</a></span>
                     	<span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes.php">Lunettes</a></span>
                         <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/chapeaux.php">Chapeaux</a></span>
-                        <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/accessoirs.php">Accessoirs</a></span>
+                        <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/accessoirs.php">Accessoires</a></span>
                     </div>
                     
                     <div class="footer_section">
-                        <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/high-tech.php">Hight Tech</a></span>
+                        <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/high-tech.php">High Tech</a></span>
                         <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/bijoux.php">Bijoux</a></span>
                         <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/divers.php">Divers</a></span>
                         <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/packs.php">Packs</a></span>
@@ -100,7 +93,7 @@
                     	<span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/contact.php">Contactez-nous</a></span>
                         <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/compte.php">Mon compte</a></span>
                         <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/panier.php">Mon panier (<?php $nb_produit_panier ?>)</a></span>
-                        <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php">Déconnexion</a></span>
+                        <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/connexion.php">Connexion</a></span>
                     </div>
                     
                 </div>

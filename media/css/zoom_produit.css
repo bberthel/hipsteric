@@ -60,6 +60,17 @@ body {
 	clear:both;
 }
 
+/*clearfix*/
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
 /* HEADER */
 
 #header {
@@ -176,7 +187,7 @@ body {
 /* MENU */
 
 #menu {
-	width:705px;
+	width:710px;
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:10px;
@@ -226,18 +237,25 @@ body {
 	margin-bottom:20px;
 }
 
-#content #haut img {
+#content #haut .image {
 	float:left;
 	max-width:450px;
 	max-height:300px;
+}
+
+#content #haut .texte {
+	float:left;
+	width:330px;
+	margin-left:20px;
+}
+
+#content #haut img {
 	border-radius:10px 0 10px 0;
 	margin-right:5px;
 }
 
-#content #haut .info_produit {
-	float:left;
-	margin-left:20px;
-	width:330px;
+#content #haut img:hover {
+	cursor: url(../../images/structured/icon_zoom.png);
 }
 
 #content #haut .info_produit span.nom_produit {
@@ -276,7 +294,6 @@ body {
 
 #content #haut .quantite_produit {
 	height:20px;
-	float:right;
 	margin:0;
 	text-align:right;
 	padding-top:5px;
@@ -287,6 +304,7 @@ body {
 	font-family:Arial;
 	font-size:12px;
 	width:100px;
+	float:right;
 }
 
 #content #haut .quantite_produit form input[id=quantite] {
@@ -294,11 +312,12 @@ body {
 }
 
 #content #haut .ajout_produit {
-	float:right;
 	background-color:#9f577a;
 	border-radius:10px 0 10px 0;
 	padding:5px;
 	margin-left:10px;
+	width:190px;
+	float:right;
 }
 
 #content #haut .ajout_produit .ajout_img {
