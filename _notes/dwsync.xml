@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="index.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130114309200000000" remote="130114309200000000" />
+<file name="index.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130119618963278241" remote="130119546600000000" />
 <file name="indexation.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130099920000000000" remote="130099920000000000" />
 <file name="search.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130099926600000000" remote="130099926600000000" />
 <file name="search_simple.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130083468000000000" remote="130083468000000000" />
 <file name="search_twig.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130095421800000000" remote="130095421800000000" />
 <file name="traitement_search.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130099926000000000" remote="130099926000000000" />
-<file name="inscription.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130114385630342438" remote="130114311000000000" />
-<file name="accueil.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130112004000000000" remote="130112004000000000" />
+<file name="inscription.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130119619456736466" remote="130119547200000000" />
+<file name="accueil.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130119219583758497" remote="130119147000000000" />
 <file name="README.md" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130108293469760492" remote="130108264200000000" />
-<file name="contact.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130114386610000000" remote="130114312200000000" />
-<file name="lunettes-pixels.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="287195876032712" remote="130114307400000000" />
+<file name="contact.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130119619305277803" remote="130119546600000000" />
+<file name="lunettes-pixels.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130119619623666013" remote="130119547200000000" />
+<file name=".gitignore" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130115610613412098" remote="130116233400000000" />
+<file name="connexion.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130119619185210935" remote="130119546600000000" />
+<file name="panier.php" server="etudiant.univ-mlv.fr//home/6ima1a/bberthel/WWW/PHP/Projet/" local="130119688558060772" remote="130119616200000000" />
 </dwsync>

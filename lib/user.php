@@ -1,7 +1,10 @@
 <?php
 require_once 'conf/top.php';
+
 connectDb();
 
+
+/* ajoute un user à la BDD */
 function insertUser($lastname,$firstname,$email,$password,$tel,$number,$adress,$CP,$city){
 
 	if(empty($lastname) || empty($password))return false;
@@ -15,9 +18,6 @@ function insertUser($lastname,$firstname,$email,$password,$tel,$number,$adress,$
 	$city = mysql_escape_string(htmlspecialchars($city));
 	$email = mysql_escape_string(htmlspecialchars($email));
 
-
-
-
 	$sql = "INSERT INTO user(nom_user,prenom_user,mdp_user,tel_user,numero_adresse_user,adresse_user,ville_user,CP_user,mail) VALUES('$lastname','$firstname','$password','$tel','$number','$adress','$city','$CP','$email')";
 	if(!mysql_query($sql)){
             echo 'FAIL';
@@ -30,28 +30,35 @@ function insertUser($lastname,$firstname,$email,$password,$tel,$number,$adress,$
 	return $request;
 }
 
+/* retouve l'id de l'utilisateur lorsqu'il se connecte */
 function getUserIdAtLogin($mail,$password){
 	if(empty($mail) || empty($password))return false;
 	$mail = mysql_escape_string(htmlspecialchars($mail));
 	$password = mysql_escape_string(htmlspecialchars($password));
-	
-	$sql = "SELECT id_user FROM user WHERE email='$mail' AND mdp_user='$password';";
-	$result = mysql_query($sql);
-	$ligne = mysql_fetch_array($result);
-	//$result = mysql_result($result,0);
-	
-	return intval($ligne);
-}
-/*
-function getUserById($id){
-	if(!is_int($id)) return false;
-	
-	$sql = "SELECT pseudo FROM user WHERE id=$id";
-	$result = mysql_query($sql);
-	$result = mysql_result($result,0);
-	
-	return $result;
-}*/
 
+	$sql = "SELECT id_user FROM user WHERE mail='$mail' && mdp_user='$password';";
+
+	$result = mysql_query($sql);
+
+	$ligne = mysql_fetch_array($result);
+		$ligne = mysql_result($result,0);
+
+	if ($ligne){
+		return intval($ligne);
+	}
+
+	
+}
+
+
+    function getUser($id_user){
+        $sql = 'SELECT user.nom_user, user.prenom_user
+                FROM user
+                WHERE user.id_user ='.$id_user; 
+
+                $result = mysql_query($sql);
+                return $result;
+    }
+    getUser(1);
 
 ?>

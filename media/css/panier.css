@@ -1,0 +1,594 @@
+/* FONTS */
+
+@font-face {
+    font-family: 'corbenregular';
+    src: url('../font/Corben/corben-regular-webfont.eot');
+    src: url('../font/Corben/corben-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/Corben/corben-regular-webfont.woff') format('woff'),
+         url('../font/Corben/corben-regular-webfont.ttf') format('truetype'),
+         url('../font/Corben/corben-regular-webfont.svg#corbenregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* GENERAL */
+
+body {
+	margin:0;
+	background-color:#f2f2f2;
+}
+
+#all {
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:0;
+	width:856px;
+	padding:10px 10px 0px 10px;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -100px;
+}
+
+#all p{
+	font-family:'corbenregular';
+	font-size:20px;
+	color:#FFF;
+	text-align:center;
+	text-shadow: 1px 1px 2px #333;
+	margin-top:60px;
+}
+
+#all a{
+	text-align:center;
+	color:#FFF;
+	text-shadow:#999;
+	font-style:italic;
+}
+
+#logo_tall img {
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+}
+
+#clear {
+	clear:both;
+}
+
+/*clearfix*/
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* SEPARATEUR MOUSTACHE */
+
+.separateur_moustache {
+	height:12px;
+	background-image:url(../../images/structured/separateur_moustache.png);
+	background-position:center;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+	clear:both;	
+}
+
+/* HEADER */
+
+#header {
+	width:856px;
+	height:140px;
+	background-image:url(../../images/structured/background.jpg);
+	border-radius: 15px 15px 0 0;
+}
+
+#header .link {
+	float:right;
+	margin-right:10px;
+	margin-top:5px;
+}
+
+#header .link span{
+	color:white;
+	font-family:Arial, Helvetica;
+	font-size:12px;
+}
+
+#header .link a {
+	color:white;
+	text-decoration:none;
+	font-style:normal;
+}
+
+#header .link a:hover {
+	text-decoration: underline;
+}
+
+/* RECHERCHE HEADER */
+
+#header .search {
+	float:right;
+	width: 200px;
+	height:35px;
+	margin:70px 5px 5px 5px;
+	padding:3px;
+	border-radius:10px 0 10px 0;
+}
+
+#header .search input[id=search]{
+	margin-top:6px;
+	margin-left:3px;
+}
+
+
+/* FORMULAIRE CONNEXION & INSCRIPTION */
+
+#form {
+	margin-left:auto;
+	margin-right:auto;
+	width:350px;
+}
+
+#form span {
+	font-family:Arial;
+	font-size:16px;
+	text-align:right;
+	margin:0;
+}
+
+#content .page_contact a {
+	font-family:Arial;
+	font-size:16px;
+	text-align:right;
+	margin:0;
+	font-style:italic;
+	text-decoration:underline;
+	color:black;
+}
+
+#content .page_contact a:hover {
+	text-decoration:none;
+}
+
+#form input[id=connexion]{
+	background: url(../../images/structured/bouton_connexion.png) no-repeat center center;
+	width:271px;
+	height:54px;
+	cursor: pointer;
+	border: none;
+	color : transparent;
+	margin-top:20px;
+}
+
+#form input[id=inscription]{
+	background: url(../../images/structured/bouton_inscription.png) no-repeat center center;
+	width:271px;
+	height:54px;
+	cursor: pointer;
+	border: none;
+	color : transparent;
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.submit {
+	float:right;
+}
+
+.submit input[id=commander]{
+	background: url(../../images/structured/bouton_commander.png) no-repeat center center;
+	width:271px;
+	height:54px;
+	cursor: pointer;
+	border: none;
+	color : transparent;
+	margin-top:20px;
+}
+
+#header .search input[id=rechercher]{
+	background: url(../../images/structured/loupe.png) no-repeat center center;
+	width:32px;
+	height:32px;
+	border:none;
+	cursor: pointer;
+	color : transparent;
+	margin-right:auto;
+	margin-top:0;
+}
+
+#form .form_champs {
+	width:270px;
+	padding-bottom:5px;
+	text-align:right;
+}
+
+#form input {
+	margin-bottom:8px;
+}
+
+#form .submit {
+	width:270px;
+	margin-left:25px;
+}
+
+/* FORMULAIRE CONTACT */
+
+#content form{
+	width: 535px;
+	margin: 0 auto;
+	padding-top: 15px;
+	font-family:Arial;
+	font-size:16px;
+}
+
+#content label{
+	font-family:Arial;
+	display: block;
+	float: left;
+	width: 90px;
+	margin-right: 10px;
+	font-size: 16px;
+}
+
+#content .input_text{
+	width: 200px;
+}
+
+#content .input_text, textarea{
+	float: left;
+	background-color : white;
+	-moz-border-radius: 1em; 
+    -webkit-border-radius:10px;
+	border: 1px solid #999;
+	padding:10px;
+	font-family:Arial;
+	font-size:16px;
+	outline-color: #9f577a;
+	width:535px;
+}
+
+#content form #objet{
+	background-color : white;
+	-moz-border-radius: 1em; 
+    -webkit-border-radius:5px;
+	padding-left:5px;
+	padding-right:5px;
+	border: 1px solid #999;
+	font-family:Arial;
+	font-size:16px;
+	outline-color: #9f577a;
+}
+
+#content label, .input_text{
+	margin-bottom: 5px;
+	height: 20px;
+}
+
+#content input[id=soumission]{
+	background: url(../../images/structured/bouton_soumission.png) no-repeat center center;
+	width:271px;
+	height:54px;
+	cursor: pointer;
+	border: none;
+	color : transparent;
+	margin-left:264px;
+	margin-top:10px;
+}
+
+.note{
+	font-family:Arial;
+	font-size: 12px;
+	color: #999;
+	font-style:italic;
+	float:right;
+	text-align:right;
+}
+
+#content .page_contact {
+	font-family:Arial;
+	font-size: 16px;
+	color: #000;
+	text-align:center;
+	width:700px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+/* MENU */
+
+#menu {
+	width:778px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:20px;
+	margin-bottom:3px;
+}
+
+#menu span {
+	font-family:'corbenregular';
+	font-size:20px;
+	color:white;
+	background-color:#9f577a;
+	border-radius:10px 0 10px 0;
+	padding:3px 8px 5px 8px;
+}
+
+#menu span img{
+	margin:0;
+}
+
+#menu span a {
+	font-style:normal;
+	text-decoration:none;
+}
+
+#menu span a:hover {
+	color:#9f577a;
+}
+
+#menu span:hover {
+	background-color:#f2f2f2;
+}
+
+/* CONTENT */
+
+#content {
+	background-color:#f2f2f2;
+	padding: 15px 10px 15px 10px;
+	overflow: auto;
+	padding-bottom:110px;
+	margin-top:10px;
+}
+
+#content .categorie {
+	background-color:#9f577a;
+	border-radius:10px 0 10px 0;
+	border-color:#9f577a;
+	padding:5px;
+	font-family:'corbenregular';
+	color:white;
+	font-size:20px;
+	text-align:left;
+}
+
+#content .categorie img {
+	float:right;
+	padding-top: 5px;
+}
+
+#content .produit {
+	padding:15px;
+	width:350px;
+	float:left;
+	display:block;
+	margin-right:15px;
+	margin-left:15px;
+	margin-top:10px;
+}
+
+#content .produit img {
+	max-width:350px;
+	max-height:235px;
+	border-radius:10px 0 10px 0;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#content .nom_produit {
+	float:left;
+	text-align:left;
+	width:175px;
+	font-family:'corbenregular';
+	font-size:16px;
+}
+
+#content .prix_produit {
+	float:left;
+	text-align:right;
+	font-family:'corbenregular';
+	font-size:16px;
+	color:#9f577a;
+	width:175px;
+}
+
+#content .type_produit {
+	float:left;
+	text-align:left;
+	font-family:'corbenregular';
+	font-size:12px;
+	color:#9f577a;
+}
+
+#content .info_produit {
+	margin-top:5px;
+	float:left;
+	clear:both;
+}
+
+#content .info_produit a {
+	text-align:left;
+	font-family: Arial;
+	font-size:10px;
+	color:#CCC;
+	text-decoration:none;
+	font-style:normal;
+	padding-top:5px;
+}
+
+#content .info_produit a:hover {
+	text-decoration: underline;
+}
+
+#content .info_img {
+	width:12px;
+	float:left;
+	margin-right:5px;
+}
+
+#content .ajout_produit {
+	float:right;
+	background-color:#9f577a;
+	border-radius:10px 0 10px 0;
+	padding:5px;
+}
+
+#content .ajout_produit a {
+	text-align:left;
+	font-family: Arial;
+	font-size:10px;
+	color:white;
+	text-decoration:none;
+	font-style:normal;
+}
+
+#content .ajout_produit a:hover {
+	text-decoration: underline;
+}
+
+#content .ajout_img {
+	float:left;
+	width:12px;
+	margin:0;
+	margin-right:3px;
+}
+
+/* TRI */
+
+#content TABLE {
+	font-family:Arial;
+	font-size:20px;
+	width:100%;
+	text-align:center;
+	margin-top:10px;
+	border:1px solid #CCC;
+}
+
+#content TABLE tr, th, td {
+	padding-bottom:10px;
+}
+
+#content TABLE tr {
+	border-bottom:1px solid #CCC;
+}
+
+#content TABLE .head_table th {
+	font-family:'corbenregular';
+	font-size:20px;
+	font-weight:normal;
+	background-color:#CCC;
+	padding:5px;
+}
+
+#content TABLE span.type_produit{
+	text-align:center;
+	float:none;
+	font-size:20px;
+}
+
+#content TABLE span.infosup_produit{
+	font-size:17px;
+}
+
+#content TABLE img {
+	max-width:150px;
+	max-height:100px;
+	margin-top:10px;
+	float:left;
+}
+
+#content span.infosup_produit {
+	text-align:center;
+	font-family:Arial;
+	font-size:15px;
+	color:white;
+	border-radius:10px 0 10px 0;
+	background-color:#999;
+	padding:5px;
+	margin-right:5px;
+}
+
+#content span.del_produit {
+	text-align:center;
+	font-family:Arial;
+	font-size:15px;
+	color:white;
+	border-radius:10px 0 10px 0;
+	background-color:#9f577a;
+	padding:5px;
+	margin-right:5px;
+}
+
+#prix {
+	font-family:'corbenregular';
+	font-size:30px;
+	width:100%;
+	text-align:right;
+}
+	
+
+/* FOOTER */
+
+#push {
+	min-height: 100px;
+}
+
+#fond_footer {
+	background:#0b0b0b;
+	border-top:5px solid 272727;
+	position: relative;
+	width:100%;
+	height: 100px;
+	margin-top: -100px;
+	clear:both;
+}
+
+#footer {
+	width:856px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-top:5px;
+}
+
+#corps_footer {
+	width:640px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#footer a {
+	color:white;
+	font-family:Arial;
+	text-decoration:none;
+}
+
+#footer a:hover {
+	text-decoration: underline;
+}
+
+#footer span {
+	font-family:Arial;
+	font-size:12px;
+	color:white;
+	margin:0;
+	margin-bottom:5px;
+	display:block;
+}
+
+#corps_footer .footer_section {
+	float:left;
+	text-align:left;
+	margin-right:50px;
+}
+
+#corps_footer .footer_section img{
+	margin-right:20px;
+}

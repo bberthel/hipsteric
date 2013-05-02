@@ -11,47 +11,15 @@ require_once 'functions.php';
 connectDb();
 
 
-    // on utilise mysql_fetch_assoc au lieu de mysql_fetch_array pour avoir un tableau associatif uniquement
-    // (il s'agit là d'un choix quant à vos préférences personnelles)
 
-
-   /* function getAllItems() {
-        // on fait un left join au lieu d'un inner join car on veut aussi les plats qui ne sont pas dans un menu
-    	$sql = 'SELECT article.id_article,article.nom_article,article.description_article,article.prix_article, article.photo_article FROM article, menu.nom as menu from plat
-                INNER JOIN type ON type.id_type = plat.id_type 
-                LEFT JOIN menu ON menu.id_menu = plat.id_menu';    	
-    	$result = mysql_query($sql);
-		$results = array();
-		while ($ligne = mysql_fetch_assoc($result)) {
-			$results[] = $ligne;
-		}
-		return $results;
-    }
-
-    function getAllMenus() {
-            $sql = 'SELECT id_menu,nom from menu';
-            $result = mysql_query($sql);
-            $results = array() ;
-            while ($ligne = mysql_fetch_assoc($result)) {
-                $results[] = $ligne;
-            }
-            return $results;
-    }
-
-    function getAllTypes() {
-            $sql = 'SELECT id_type,nom from type';
-            $result = mysql_query($sql);
-            $results = array() ;
-            while ($ligne = mysql_fetch_assoc($result)) {
-                $results[] = $ligne;
-            }
-            return $results;
-    }*/
-       function getArticle($id_article){ 
-            $sql = 'SELECT article.nom_article, article.prix_article, article.description_article
+    function getArticle($id_article){
+        $sql = 'SELECT article.nom_article, article.prix_article, article.description_article,article.photo_article, article.id_categorie, categorie.nom_categorie
                 FROM article
-                WHERE article.id_article ='. $id_article;   
-            return $sql;
+                LEFT JOIN categorie ON article.id_categorie = categorie.id_categorie
+                WHERE article.id_article ='.$id_article; 
+
+                $result = mysql_query($sql);
+                return $result;
     }
    
 
@@ -74,6 +42,10 @@ connectDb();
 
 // ajouter un article à la base de donnée
     function addItems($nom_article,$prix_article,$description_article,$photo_article,$id_categorie ){
+
+            if(empty($nom_article) || empty($prix_article))return false;
+
+
         $sql = "INSERT INTO `hipsteric`.`article` (`id_article`, `nom_article`, `prix_article`, `description_article`, `photo_article`, `id_categorie`) 
         VALUES (NULL, '".mysql_real_escape_string($nom_article)."','".mysql_real_escape_string($prix_article)."', '".mysql_real_escape_string($description_article)."', '".mysql_real_escape_string($photo_article)."', '".mysql_real_escape_string($id_categorie)."')";
         echo $sql;
@@ -83,6 +55,9 @@ connectDb();
 
 // ajouter un pack à la base de donnée
 function addPack($nom_pack,$prix_pack,$photo_pack,$description_pack){
+
+                if(empty($nom_pack) || empty($prix_pack))return false;
+
         $sql = "INSERT INTO `hipsteric`.`pack` (`id_pack`, `nom_pack`, `prix_pack`, `photo_pack`, `description_pack`) 
         VALUES (NULL, '".mysql_real_escape_string($nom_pack)."','".mysql_real_escape_string($prix_pack)."', '".mysql_real_escape_string($photo_pack)."', '".mysql_real_escape_string($description_pack)."')";
         echo $sql;
@@ -90,7 +65,7 @@ function addPack($nom_pack,$prix_pack,$photo_pack,$description_pack){
     }
     //addPack('packstachemou', 10, 'http://localhost:8888/images/lunettes-hipster.jpg','I love moustache' );    
 
-/*    TRI EN FONCTION DU PRIX       */
+                                                        /*    TRI EN FONCTION DU PRIX       */
 
 // Items
     function getItemsOrderedByPrixAsc() {

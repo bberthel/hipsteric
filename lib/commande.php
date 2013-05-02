@@ -17,8 +17,8 @@ $tpl = new Twig_Environment($loader, array(
 //require 'user.php';
 connectDb();
 
-  function getItemOfOrder($id_user) {
-            $sql = 'SELECT commande.id_commande, commande.prix_commande, commande.numero_adresse_facturation, commande.numero_adresse_livraison, commande.adresse_facturation, commande.adresse_livraison, commande.CP_facturation, commande.CP_livraison, commande.ville_facturation, commande.ville_livraison, commande.id_user,article.id_article, article.nom_article, article.prix_article, article.description_article,article.id_categorie
+  function getOrderByUser($id_user) {
+            $sql = 'SELECT commande.id_commande, commande.prix_commande,commande.nb_articles, commande.numero_adresse_facturation, commande.numero_adresse_livraison, commande.adresse_facturation, commande.adresse_livraison, commande.CP_facturation, commande.CP_livraison, commande.ville_facturation, commande.ville_livraison, commande.id_user,article.id_article, article.nom_article, article.prix_article, article.description_article,article.id_categorie
             FROM commande
             INNER JOIN est_commande_article ON commande.id_commande = est_commande_article.id_commande
             INNER JOIN article ON article.id_article = est_commande_article.id_article
@@ -33,13 +33,31 @@ connectDb();
 
             return $results;
     }
-    getItemOfOrder(2);
+
+
+    function getNumberOfItems($id_user){
+        $sql = 'SELECT commande.nb_articles
+                FROM commande
+                WHERE commande.id_user ='.$id_user; 
+
+                $result = mysql_query($sql);
+                var_dump($result);
+
+                return $result;
+    }
+    getNumberOfItems(1);
+
+
+
+
+
 
     function createCommande($id_user){
         $sql = "INSERT INTO `hipsteric`.`commande` (`id_commande`, `prix_commande`, `numero_adresse_livraison`, `numero_adresse_facturation`, `adresse_facturation`, `adresse_livraison`, `ville_facturation`, `ville_livraison`, `CP_livraison`, `CP_facturation`, `id_user`) 
         VALUES (NULL, '', '', '', '', '', '', '', '', '', '$id_user')";
         echo $sql;
         $result = mysql_query($sql);
+
     }
 
 

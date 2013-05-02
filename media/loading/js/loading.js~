@@ -1,0 +1,35 @@
+jQuery(function( $ ){
+	
+	
+	//$('#content').css('display','none');
+	// On affiche notre page de chargement
+	//$('#loading').css('display','block');		
+	
+	// Lorsque notre contenu est chargé
+	/*$(document).ready(function($) {
+   	// On affiche le contenu du site
+		$('#content').css('display','block');
+		// On cache notre page de chargement
+		$('#loading').css('display','none');
+	});*/
+	
+	 
+	// On cache le contenu de notre page
+    $("#content").hide(); 
+    // On affiche notre page de chargement
+    $("#loading").show(); 
+    // Lorsque notre contenu est chargé
+    /*$("#content").ready(function() { 
+        	$("#loading").fadeOut(function() { 
+            $("#content").fadeIn(1000); 
+      	  }); 
+ 	 });*/
+
+	$(window).load(function() {
+      $("#loading").fadeOut(function() { 
+            $("#content").fadeIn(1000); 
+      });
+	}); 
+
+						
+});

@@ -1,28 +1,62 @@
 <?php
+
+// Debut de session
+session_start();
 require 'conf/top.php';
 
 require 'lib/article.php';
 
 
+
 connectDb();
+echo $_SESSION['nb_articles'];
+echo $_SESSION['nom_user'];
 
-$sql = 'SELECT article.nom_article, article.prix_article, article.description_article,article.photo_article, article.id_categorie, categorie.nom_categorie
-                FROM article
-                LEFT JOIN categorie ON article.id_categorie = categorie.id_categorie
-                WHERE article.id_article =12'; 
+echo $_SESSION['prenom_user'];
 
-                $result = mysql_query($sql);
+        $result = getArticle(12);
                 while( $results = mysql_fetch_array($result) )
                     {
-                    $nom = $results["nom_article"];
-                    $prix = $results["prix_article"];
-                    $prix = $results["prix_article"];
-                    $photo = $results["photo_article"];
+                    $nom1 = $results["nom_article"];
+                    $prix1 = $results["prix_article"];
+                    $desc1 = $results["description_article"];
+                    $photo1 = $results["photo_article"];
 
-                    $categorie = $results["nom_categorie"];
+                    $categorie1 = $results["nom_categorie"];
+                }
 
+                $result = getArticle(1);
+                while( $results = mysql_fetch_array($result) )
+                    {
+                    $nom2= $results["nom_article"];
+                    $prix2 = $results["prix_article"];
+                    $desc2 = $results["description_article"];
+                    $photo2 = $results["photo_article"];
 
-                    }
+                    $categorie2 = $results["nom_categorie"];
+                }
+
+                        $result = getArticle(2);
+                while( $results = mysql_fetch_array($result) )
+                    {
+                    $nom3 = $results["nom_article"];
+                    $prix3 = $results["prix_article"];
+                    $desc3 = $results["description_article"];
+                    $photo3 = $results["photo_article"];
+
+                    $categorie3 = $results["nom_categorie"];
+                }
+
+                        $result = getArticle(4);
+                while( $results = mysql_fetch_array($result) )
+                    {
+                    $nom4 = $results["nom_article"];
+                    $prix4 = $results["prix_article"];
+                    $desc4 = $results["description_article"];
+                    $photo4 = $results["photo_article"];
+
+                    $categorie4 = $results["nom_categorie"];
+                }
  
 
 
@@ -50,13 +84,13 @@ $sql = 'SELECT article.nom_article, article.prix_article, article.description_ar
                 </div>
                 
                 <div class="link">
-                    <span>Bonjour Alizée</span>
+                    <span>Bonjour <?php echo $_SESSION['prenom_user'] ?></span>
                     <span>|</span>
                     <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/contact.php">Contactez-nous</a></span>
                     <span>|</span>
                     <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/compte.php">Mon compte</a></span>
                     <span>|</span>
-                    <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/panier.php">Mon panier (<?php $nb_produit_panier ?>)</a></span>
+                    <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/panier.php">Mon panier (<?php echo $_SESSION['nb_articles'] ?>)</a></span>
                     <span>|</span>
                     <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php">Déconnexion</a></span>
                 </div>
@@ -85,10 +119,10 @@ $sql = 'SELECT article.nom_article, article.prix_article, article.description_ar
             	<div class="categorie">Promotions du moment<img src="images/structured/moustache.png"></div>
                 
                 <div class="produit">
-                    <a href="<?php echo $photo ?>"><img src="images/lunettes-hipster.jpg" title="Lunettes : Pixels"></a>
-                    <span class="nom_produit"><?php echo $nom ?></span>
-                    <span class="prix_produit"><?php echo $prix ?>€</span>
-                    <span class="type_produit">#<?php echo $categorie ?></span>
+                    <a href="<?php echo $photo1 ?>"><img src="images/lunettes-hipster.jpg" title="Lunettes : Pixels" ></a>
+                    <span class="nom_produit"><?php echo $nom1 ?></span>
+                    <span class="prix_produit"><?php echo $prix1 ?>€</span>
+                    <span class="type_produit">#<?php echo $categorie1 ?></span>
                     <div class="info_produit">
                     	<div class="info_img"><img src="images/structured/info.png"></div>
                    		<a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes-pixels.php">Plus d'informations</a>
@@ -100,10 +134,10 @@ $sql = 'SELECT article.nom_article, article.prix_article, article.description_ar
                 </div>
                 
                 <div class="produit">
-					<img class="zoombox" src="images/tumblr_m48qz6kmTy1qfkglvo1_500.jpg" title="Lunettes : Retro">
-                    <span class="nom_produit">Retro</span>
-                    <span class="prix_produit">Prix€</span>
-                    <span class="type_produit">#lunettes</span>
+					<img class="zoombox" src="<?php echo $photo2 ?>" title="Lunettes : Retro" >
+                    <span class="nom_produit"><?php echo $nom2 ?></span>
+                    <span class="prix_produit"><?php echo $prix2 ?>€</span>
+                    <span class="type_produit">#<?php echo $categorie2 ?></span>
                     <div class="info_produit">
                         <div class="info_img"><img src="images/structured/info.png"></div>
                         <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes-retro.php">Plus d'informations</a>
@@ -115,10 +149,10 @@ $sql = 'SELECT article.nom_article, article.prix_article, article.description_ar
                 </div>
                                 
                 <div class="produit">
-                    <img class="zoombox" src="images/100329_les_commandements_du_hipster_aspx_ss_image_10_jpg_902484264_north_320x.jpg" title="Lunettes : Red John">
-                	<span class="nom_produit">Red John</span>
-                    <span class="prix_produit">Prix€</span>
-                    <span class="type_produit">#lunettes</span>
+                    <img class="zoombox" src="<?php echo $photo3 ?>" title="Lunettes : Red John" >
+                	<span class="nom_produit"><?php echo $nom3 ?></span>
+                    <span class="prix_produit"><?php echo $prix3 ?>€</span>
+                    <span class="type_produit">#<?php echo $categorie3 ?></span>
                     <div class="info_produit">
                         <div class="info_img"><img src="images/structured/info.png"></div>
                         <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes-redjohn.php">Plus d'informations</a>
@@ -130,10 +164,10 @@ $sql = 'SELECT article.nom_article, article.prix_article, article.description_ar
                 </div>
                 
                 <div class="produit">
-                    <img class="zoombox" src="images/hipster_tee.jpg" title="T-shirt : Yesterday 1965">
-                	<span class="nom_produit">Yesterday 1965</span>
-                    <span class="prix_produit">Prix€</span>
-                    <span class="type_produit">#t-shirt</span>
+                    <img class="zoombox" src="<?php echo $photo4 ?>" title="T-shirt : Yesterday 1965" >
+                	<span class="nom_produit"><?php echo $nom4 ?></span>
+                    <span class="prix_produit">p<?php echo $prix4 ?>€</span>
+                    <span class="type_produit">#<?php echo $desc4 ?></span>
                     <div class="info_produit">
                         <div class="info_img"><img src="images/structured/info.png"></div>
                         <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/t-shirt-yesterday1965.php">Plus d'informations</a>

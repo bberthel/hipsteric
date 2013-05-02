@@ -12,14 +12,33 @@
 
 }
 
+/* LOADING */
+
+#loading {
+	padding-top:50px;
+	width:100%;
+	height:100%;
+	background-color:white;
+}
+
+#loading p {
+	text-align:center;
+	font-family:'corbenregular';
+	font-size:30px;
+	color:#9f577a;
+}
+
+#loading img {
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+}
+
 /* GENERAL */
 
 body {
-	background-image:url(../../images/structured/background.jpg);
-	background-attachment:fixed;
 	margin:0;
-	background-repeat:no-repeat;
-	background-position:top, center;
+	background-color:#f2f2f2;
 }
 
 #all {
@@ -71,19 +90,31 @@ body {
     clear: both;
 }
 
+/* SEPARATEUR MOUSTACHE */
+
+.separateur_moustache {
+	height:12px;
+	background-image:url(../../images/structured/separateur_moustache.png);
+	background-position:center;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+	clear:both;	
+}
+
 /* HEADER */
 
 #header {
 	width:856px;
-	height:100px;
-}
-
-#header .logo {
-	float:left;
+	height:140px;
+	background-image:url(../../images/structured/background.jpg);
+	border-radius: 15px 15px 0 0;
 }
 
 #header .link {
 	float:right;
+	margin-right:10px;
+	margin-top:5px;
 }
 
 #header .link span{
@@ -93,12 +124,29 @@ body {
 }
 
 #header .link a {
+	color:white;
 	text-decoration:none;
 	font-style:normal;
 }
 
 #header .link a:hover {
 	text-decoration: underline;
+}
+
+/* RECHERCHE HEADER */
+
+#header .search {
+	float:right;
+	width: 200px;
+	height:35px;
+	margin:70px 5px 5px 5px;
+	padding:3px;
+	border-radius:10px 0 10px 0;
+}
+
+#header .search input[id=search]{
+	margin-top:6px;
+	margin-left:3px;
 }
 
 /* FORMULAIRE CONNEXION & INSCRIPTION */
@@ -110,12 +158,24 @@ body {
 }
 
 #form span {
-	font-family:'corbenregular';
+	font-family:Arial;
 	font-size:16px;
-	color:white;
 	text-align:right;
 	margin:0;
-	text-shadow: 1px 1px 2px #333;
+}
+
+#content .page_contact a {
+	font-family:Arial;
+	font-size:16px;
+	text-align:right;
+	margin:0;
+	font-style:italic;
+	text-decoration:underline;
+	color:black;
+}
+
+#content .page_contact a:hover {
+	text-decoration:none;
 }
 
 #form input[id=connexion]{
@@ -163,187 +223,7 @@ body {
 
 #form .submit {
 	width:270px;
-	margin-left:auto;
-	margin-right:auto;
-}
-
-/* RECHERCHE HEADER */
-
-#header .search {
-	float:right;
-	width: 200px;
-	height:35px;
-	background-color:#9f577a;
-	margin:50px 5px 5px 5px;
-	padding:3px 3px 3px 3px;
-	border-radius:10px 0 10px 0;
-}
-
-#header .search input[id=search]{
-	margin-top:6px;
-	margin-left:3px;
-}
-
-/* MENU */
-
-#menu {
-	width:710px;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:10px;
-	margin-bottom:3px;
-}
-
-#menu span {
-	font-family:'corbenregular';
-	font-size:20px;
-	color:white;
-	background-color:#9f577a;
-	border-radius:10px 10px 0 0;
-	padding:5px 8px 8px 8px;
-}
-
-#menu span img{
-	margin:0;
-}
-
-#menu span a {
-	font-style:normal;
-	text-decoration:none;
-}
-
-#menu span a:hover {
-	color:#9f577a;
-}
-
-#menu span:hover {
-	background-color:#FFF;
-}
-
-/* CONTENT */
-
-#content {
-	min-height:500px;
-	background-color:#FFF;
-	border-radius:10px;
-	padding: 15px 10px 15px 10px;
-	border:solid 5px #9f577a;
-	overflow: auto;
-	padding-bottom:110px;
-}
-
-#content .categorie {
-	width:818px;
-	background-color:#9f577a;
-	border-radius:10px 0 10px 0;
-	border-color:#9f577a;
-	padding:5px;
-	font-family:'corbenregular';
-	color:white;
-	font-size:20px;
-	text-align:left;
-}
-
-#content .categorie img {
-	float:right;
-	padding-top: 5px;
-}
-
-#content .produit {
-	padding:15px;
-	width:350px;
-	float:left;
-	display:block;
-	margin-right:15px;
-	margin-left:15px;
-	margin-top:10px;
-}
-
-#content .produit img {
-	max-width:350px;
-	max-height:235px;
-	border-radius:10px 0 10px 0;
-	display:block;
-	margin-left:auto;
-	margin-right:auto;
-}
-
-#content .nom_produit {
-	float:left;
-	text-align:left;
-	width:175px;
-	font-family:'corbenregular';
-	font-size:16px;
-}
-
-#content .prix_produit {
-	float:left;
-	text-align:right;
-	font-family:'corbenregular';
-	font-size:16px;
-	color:#9f577a;
-	width:175px;
-}
-
-#content .type_produit {
-	float:left;
-	text-align:left;
-	font-family:'corbenregular';
-	font-size:12px;
-	color:#9f577a;
-}
-
-#content .info_produit {
-	margin-top:5px;
-	float:left;
-	clear:both;
-}
-
-#content .info_produit a {
-	text-align:left;
-	font-family: Arial;
-	font-size:10px;
-	color:#CCC;
-	text-decoration:none;
-	font-style:normal;
-	padding-top:5px;
-}
-
-#content .info_produit a:hover {
-	text-decoration: underline;
-}
-
-#content .info_img {
-	width:12px;
-	float:left;
-	margin-right:5px;
-}
-
-#content .ajout_produit {
-	float:right;
-	background-color:#9f577a;
-	border-radius:10px 0 10px 0;
-	padding:5px;
-}
-
-#content .ajout_produit a {
-	text-align:left;
-	font-family: Arial;
-	font-size:10px;
-	color:white;
-	text-decoration:none;
-	font-style:normal;
-}
-
-#content .ajout_produit a:hover {
-	text-decoration: underline;
-}
-
-#content .ajout_img {
-	float:left;
-	width:12px;
-	margin:0;
-	margin-right:3px;
+	margin-left:25px;
 }
 
 /* FORMULAIRE CONTACT */
@@ -429,6 +309,187 @@ body {
 	margin-right:auto;
 }
 
+/* MENU */
+
+#menu {
+	width:778px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:20px;
+	margin-bottom:3px;
+}
+
+#menu span {
+	font-family:'corbenregular';
+	font-size:20px;
+	color:white;
+	background-color:#9f577a;
+	border-radius:10px 0 10px 0;
+	padding:3px 8px 5px 8px;
+}
+
+#menu span img{
+	margin:0;
+}
+
+#menu span a {
+	font-style:normal;
+	text-decoration:none;
+}
+
+#menu span a:hover {
+	color:#9f577a;
+}
+
+#menu span:hover {
+	background-color:#f2f2f2;
+}
+
+/* CONTENT */
+
+#content {
+	background-color:#f2f2f2;
+	padding: 15px 10px 15px 10px;
+	overflow: auto;
+	padding-bottom:110px;
+	margin-top:10px;
+}
+
+#content .categorie {
+	background-color:#e32c1a;
+	border-radius:10px 10px 0 0;
+	padding:5px;
+	font-family:'corbenregular';
+	color:white;
+	font-size:20px;
+	text-align:left;
+}
+
+#content .categorie img {
+	float:right;
+	padding-top: 5px;
+}
+
+#content .produit {
+	padding:15px;
+	width:350px;
+	float:left;
+	display:block;
+	margin-right:15px;
+	margin-left:15px;
+	margin-top:10px;
+}
+
+#content .produit img {
+	max-width:350px;
+	max-height:235px;
+	border-radius:10px 0 10px 0;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#content .nom_produit {
+	float:left;
+	text-align:left;
+	width:175px;
+	font-family:'corbenregular';
+	font-size:16px;
+}
+
+#content .prix_produit {
+	float:left;
+	text-align:right;
+	font-family:'corbenregular';
+	font-size:16px;
+	color:#9f577a;
+	width:175px;
+}
+
+#content .type_produit {
+	float:left;
+	text-align:left;
+	font-family:'corbenregular';
+	font-size:12px;
+	color:#9f577a;
+}
+
+#content .info_produit {
+	margin-top:5px;
+	float:left;
+	clear:both;
+}
+
+#content .info_produit a {
+	text-align:left;
+	font-family: Arial;
+	font-size:10px;
+	color: #999;
+	text-decoration:none;
+	font-style:normal;
+	padding-top:5px;
+}
+
+#content .info_produit a:hover {
+	text-decoration: underline;
+}
+
+#content .info_img {
+	width:12px;
+	float:left;
+	margin-right:5px;
+}
+
+#content .ajout_produit {
+	float:right;
+	background-color:#9f577a;
+	border-radius:10px 0 10px 0;
+	padding:5px;
+}
+
+#content .ajout_produit a {
+	text-align:left;
+	font-family: Arial;
+	font-size:10px;
+	color:white;
+	text-decoration:none;
+	font-style:normal;
+}
+
+#content .ajout_produit a:hover {
+	text-decoration: underline;
+}
+
+#content .ajout_img {
+	float:left;
+	width:12px;
+	margin:0;
+	margin-right:3px;
+}
+
+/* TRI */
+
+#content .tri {
+	width:140px;
+	margin-top:10px;
+	margin-left:auto;
+	background-color: #999;
+	border-radius:10px 0 10px 0;
+	padding: 5px;
+}
+
+#content .tri a {
+	font-family:Arial;
+	font-size:16px;
+	font-style:normal;
+	text-decoration:none;
+	color:white;
+}	
+
+#content .tri a:hover {
+	text-decoration: underline;
+}	
+
 /* FOOTER */
 
 #push {
@@ -437,7 +498,7 @@ body {
 
 #fond_footer {
 	background:#0b0b0b;
-	border-top:5px solid 272727;
+	border-top:5px solid #272727;
 	position: relative;
 	width:100%;
 	height: 100px;
@@ -485,4 +546,22 @@ body {
 
 #corps_footer .footer_section img{
 	margin-right:20px;
+}
+
+/* BOUTON HAUT DE PAGE */
+
+#backtop{
+	float:right;
+	 background: #0b0b0b;
+	 width:100px;
+	 padding:5px;
+	 margin-top:10px;
+	 border-radius:10px 10px 0 0;
+	 color:white;
+	 border:none;
+}
+
+#backtop:hover{
+	 cursor:pointer;
+	 background-color:#272727;
 }
