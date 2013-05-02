@@ -1,3 +1,34 @@
+<?php
+require 'conf/top.php';
+
+require 'lib/article.php';
+
+
+connectDb();
+
+$sql = 'SELECT article.nom_article, article.prix_article, article.description_article,article.photo_article, article.id_categorie, categorie.nom_categorie
+                FROM article
+                LEFT JOIN categorie ON article.id_categorie = categorie.id_categorie
+                WHERE article.id_article =12'; 
+
+                $result = mysql_query($sql);
+                while( $results = mysql_fetch_array($result) )
+                    {
+                    $nom = $results["nom_article"];
+                    $prix = $results["prix_article"];
+                    $prix = $results["prix_article"];
+                    $photo = $results["photo_article"];
+
+                    $categorie = $results["nom_categorie"];
+
+
+                    }
+ 
+
+
+?>
+
+
 <html>
     <head>
     	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -19,6 +50,8 @@
                 </div>
                 
                 <div class="link">
+                    <span>Bonjour Alizée</span>
+                    <span>|</span>
                     <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/contact.php">Contactez-nous</a></span>
                     <span>|</span>
                     <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/compte.php">Mon compte</a></span>
@@ -47,13 +80,15 @@
             </div>
             
             <div id="content">
+
+
             	<div class="categorie">Promotions du moment<img src="images/structured/moustache.png"></div>
                 
                 <div class="produit">
-                    <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes-pixels.php"><img src="images/lunettes-hipster.jpg" title="Lunettes : Pixels"></a>
-                    <span class="nom_produit">Pixels</span>
-                    <span class="prix_produit">Prix€</span>
-                    <span class="type_produit">#lunettes</span>
+                    <a href="<?php echo $photo ?>"><img src="images/lunettes-hipster.jpg" title="Lunettes : Pixels"></a>
+                    <span class="nom_produit"><?php echo $nom ?></span>
+                    <span class="prix_produit"><?php echo $prix ?>€</span>
+                    <span class="type_produit">#<?php echo $categorie ?></span>
                     <div class="info_produit">
                     	<div class="info_img"><img src="images/structured/info.png"></div>
                    		<a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes-pixels.php">Plus d'informations</a>

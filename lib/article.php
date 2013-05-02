@@ -1,21 +1,15 @@
 <?php
-require_once '../conf/settings.php';
+//require_once '../conf/settings.php';
 require_once 'functions.php';
 //require_once LIB_PATH . 'plat.php';
 //require_once LIB_PATH . 'user.php';
 
-/* Initialisation moteur Twig */
-require_once('../lib/Twig/Autoloader.php');
-Twig_Autoloader::register();
-$loader = new Twig_Loader_Filesystem('../templates'); // Re´pertoire contenant les templates
-$tpl = new Twig_Environment($loader, array(
-'cache' => false, // De´sactiver le cache en de´veloppement
-//'cache' => 'compilation_cache' // De´commenter cette ligne en production
-));
+
 
 
 //require 'user.php';
 connectDb();
+
 
     // on utilise mysql_fetch_assoc au lieu de mysql_fetch_array pour avoir un tableau associatif uniquement
     // (il s'agit là d'un choix quant à vos préférences personnelles)
@@ -53,6 +47,15 @@ connectDb();
             }
             return $results;
     }*/
+       function getArticle($id_article){ 
+            $sql = 'SELECT article.nom_article, article.prix_article, article.description_article
+                FROM article
+                WHERE article.id_article ='. $id_article;   
+            return $sql;
+    }
+   
+
+    //affiche les articles contenus dans un pack
     function getItempsByPack($id_pack) {
            
             $sql='SELECT * FROM pack AS p, compose c
@@ -67,7 +70,25 @@ connectDb();
             var_dump($results);
             return $results;
     }
-    getItempsByPack(4);
+    //getItempsByPack(4);
+
+// ajouter un article à la base de donnée
+    function addItems($nom_article,$prix_article,$description_article,$photo_article,$id_categorie ){
+        $sql = "INSERT INTO `hipsteric`.`article` (`id_article`, `nom_article`, `prix_article`, `description_article`, `photo_article`, `id_categorie`) 
+        VALUES (NULL, '".mysql_real_escape_string($nom_article)."','".mysql_real_escape_string($prix_article)."', '".mysql_real_escape_string($description_article)."', '".mysql_real_escape_string($photo_article)."', '".mysql_real_escape_string($id_categorie)."')";
+        echo $sql;
+        $result = mysql_query($sql);
+    }
+    //addItems('pixel', 50, 'parce qu\'on a trop le swaag', 'http://localhost:8888/images/lunettes-hipster.jpg',4 );
+
+// ajouter un pack à la base de donnée
+function addPack($nom_pack,$prix_pack,$photo_pack,$description_pack){
+        $sql = "INSERT INTO `hipsteric`.`pack` (`id_pack`, `nom_pack`, `prix_pack`, `photo_pack`, `description_pack`) 
+        VALUES (NULL, '".mysql_real_escape_string($nom_pack)."','".mysql_real_escape_string($prix_pack)."', '".mysql_real_escape_string($photo_pack)."', '".mysql_real_escape_string($description_pack)."')";
+        echo $sql;
+        $result = mysql_query($sql);
+    }
+    //addPack('packstachemou', 10, 'http://localhost:8888/images/lunettes-hipster.jpg','I love moustache' );    
 
 /*    TRI EN FONCTION DU PRIX       */
 
