@@ -33,11 +33,7 @@ if(isset($_POST['submit'])){
         $_SESSION['nom_user']= $results["nom_user"];
         $_SESSION['prenom_user'] = $results["prenom_user"];
                 }
-        $result2= getNumberOfItems($id);
-        while( $results2 = mysql_fetch_array($result2) )
-                    {
-        $_SESSION['nb_articles']= $results2["nb_articles"];
-                }
+       
 
 
     }
@@ -99,6 +95,8 @@ if(isset($_POST['submit'])){
             
                 <div class="page_contact">Bienvenue sur votre site d'hipsters trop swag,</div>
                 <div class="page_contact">connectez vous pour profiter de tous les avantages !</div>
+                <br>
+                <div class="page_contact"><?php echo $connexion ?></div>
                 <br>
                 <div class="page_contact">Pas encore membre ? <a href="inscription.php">Inscription</a></div>
                             

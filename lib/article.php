@@ -22,6 +22,15 @@ connectDb();
                 return $result;
     }
    
+    //affiche les articles contenus dans une catégorie
+    function getItemsByCat($id_categorie) {
+           
+            $sql='SELECT * FROM article 
+            WHERE article.id_categorie ='. $id_categorie;
+            $result = mysql_query($sql);
+ 
+            return $result;
+    }
 
     //affiche les articles contenus dans un pack
     function getItempsByPack($id_pack) {

@@ -1,17 +1,11 @@
 <?php
-require_once '../conf/settings.php';
+require_once '/Applications/MAMP/htdocs/php/Projet/conf/settings.php';
 require_once 'functions.php';
 //require_once LIB_PATH . 'plat.php';
 //require_once LIB_PATH . 'user.php';
 
 /* Initialisation moteur Twig */
-require_once('../lib/Twig/Autoloader.php');
-Twig_Autoloader::register();
-$loader = new Twig_Loader_Filesystem('../templates'); // Re´pertoire contenant les templates
-$tpl = new Twig_Environment($loader, array(
-'cache' => false, // De´sactiver le cache en de´veloppement
-//'cache' => 'compilation_cache' // De´commenter cette ligne en production
-));
+
 
 
 //require 'user.php';
@@ -41,11 +35,9 @@ connectDb();
                 WHERE commande.id_user ='.$id_user; 
 
                 $result = mysql_query($sql);
-                var_dump($result);
 
                 return $result;
     }
-    getNumberOfItems(1);
 
 
 

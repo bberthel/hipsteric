@@ -12,9 +12,6 @@
     
         <div id="all">
             <div id="header">
-            	<div class="logo">
-                    <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php"><img src="images/structured/logo_small.png"></a>
-                </div>
                 
                 <div class="link">
                     <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/contact.php">Contactez-nous</a></span>
@@ -26,6 +23,8 @@
                     <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/connexion.php">Connexion</a></span>
                 </div>
                 
+                <div id="clear"></div>
+                
                 <div class="search">
                 	<form id="search" name="search" method="post" action="">
                         <input name="search" type="text" id="search" />
@@ -35,9 +34,10 @@
             </div>
             
             <div id="menu">
+            	<span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php"><img src="images/structured/moustache_home.png"></a></span>
             	<span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes.php">Lunettes</a></span>
                 <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/chapeaux.php">Chapeaux</a></span>
-                <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/accessoirs.php">Accessoires</a></span>
+                <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/accessoires.php">Accessoires</a></span>
                 <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/high-tech.php">High Tech</a></span>
                 <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/bijoux.php">Bijoux</a></span>
                 <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/divers.php">Divers</a></span>
@@ -49,6 +49,8 @@
             	<div class="page_contact">Une question, une petite cass'dédi, une info qui manque ?</div>
                 <div class="page_contact">Check-nous boloss !</div>
             	
+                <div class="separateur_moustache"></div>
+                
                 <form method="post" action="">
 					Objet : <input id="objet" type="text" alt="objet" name="objet" />
 					<div class="clear"></div>
@@ -70,9 +72,9 @@
                     <div class="footer_section">
                         <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php"> Hipsteric.com </a>
                         <span>Retrouvez nous sur les réseaux sociaux :</span>
-                        <a href=""><img src="images/structured/facebook.png" alt="Facebook"></a>
-                        <a href=""><img src="images/structured/twitter.png" alt="Facebook"></a>
-                        <a href=""><img src="images/structured/you_tube.png" alt="Facebook"></a>
+                        <a href=""><img src="images/structured/facebook.png" title="Facebook" target="_blank"></a>
+                        <a href=""><img src="images/structured/twitter.png" title="Twitter" target="_blank"></a>
+                        <a href="http://youtu.be/1yPfmRoSfpA"><img src="images/structured/you_tube.png" title="YouTube" target="_blank"></a>
                     </div>
                     
                     <div class="footer_section">

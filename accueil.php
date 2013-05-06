@@ -3,16 +3,20 @@
 // Debut de session
 session_start();
 require 'conf/top.php';
+require 'lib/user.php';
+require 'lib/commande.php';
 
 require 'lib/article.php';
 
 
 
 connectDb();
-echo $_SESSION['nb_articles'];
-echo $_SESSION['nom_user'];
 
-echo $_SESSION['prenom_user'];
+ $result= getNumberOfItems( $_SESSION['id_user']);
+        while( $results = mysql_fetch_array($result) )
+                    {
+        $_SESSION['nombres_articles']= $results["nb_articles"]; 
+                }
 
         $result = getArticle(12);
                 while( $results = mysql_fetch_array($result) )
@@ -90,7 +94,7 @@ echo $_SESSION['prenom_user'];
                     <span>|</span>
                     <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/compte.php">Mon compte</a></span>
                     <span>|</span>
-                    <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/panier.php">Mon panier (<?php echo $_SESSION['nb_articles'] ?>)</a></span>
+                    <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/panier.php">Mon panier (<?php echo $_SESSION['nombres_articles'] ?>)</a></span>
                     <span>|</span>
                     <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php">Déconnexion</a></span>
                 </div>
