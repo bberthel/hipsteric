@@ -1,3 +1,17 @@
+<?php
+
+
+// Debut de session
+session_start();
+require 'conf/top.php';
+require 'lib/article.php';
+
+
+
+connectDb();
+
+?>
+
 <html>
     <head>
     	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -19,13 +33,15 @@
             <div id="header">
                 
                 <div class="link">
+                                       <span>Bonjour <?php echo $_SESSION['prenom_user'] ?></span>
+                    <span>|</span>
                     <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/contact.php">Contactez-nous</a></span>
                     <span>|</span>
                     <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/compte.php">Mon compte</a></span>
                     <span>|</span>
-                    <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/panier.php">Mon panier (<?php $nb_produit_panier ?>)</a></span>
+                    <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/panier.php">Mon panier (<?php echo $_SESSION['nombres_articles'] ?>)</a></span>
                     <span>|</span>
-                    <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/connexion.php">Connexion</a></span>
+                    <span><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/index.php">Déconnexion</a></span>
                 </div>
                 
                 <div id="clear"></div>
@@ -51,7 +67,35 @@
             
             <div id="content">
             	<div class="categorie">Accessoires<img src="images/structured/moustache.png"></div>
-                
+
+                <!--  génère les div produit -->
+                 <?php
+                    $result = getItemsByCat(3);
+                    $results = array();
+                     while( $ligne = mysql_fetch_assoc($result) )
+                    {
+                        $results[]=$ligne;
+
+                     } 
+                    foreach ($results as $key => $value) {
+                     echo"
+                    <div class=\"produit\">
+                         <a href=\"\"> <img src=\"".$value["photo_article"]."\" title=\"Lunettes : Pixels\" ></a>
+                         <span class=\"nom_produit\">".$value["nom_article"] ."</span>
+                         <span class=\"prix_produit\">".$value["prix_article"] ."€</span>
+                    ";}
+                    ?>
+                        <div class="info_produit">
+                            <div class="info_img"><img src="images/structured/info.png"></div>
+                            <a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/lunettes-retro.php">Plus d'informations</a>
+                        </div>
+                        <div class="ajout_produit">
+                            <div class="ajout_img"><img src="images/structured/ajout_panier.png"></div>
+                            <a href="">Ajout panier</a>
+                        </div>
+                    </div>
+
+
                 <div class="tri"><a href="http://etudiant.univ-mlv.fr/~bberthel/PHP/Projet/recherche.php">Recherche avancée</a></div>
                 
                 <div class="separateur_moustache"></div>

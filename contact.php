@@ -1,3 +1,29 @@
+
+<?php
+
+// Debut de session
+session_start();
+
+require 'conf/top.php';
+require 'lib/user.php';
+
+
+// Connexion a la base de donnees
+connectDb();
+
+
+if(isset($_POST['submit'])){
+
+    var_dump($_POST);
+   
+        if(insertMessage($_SESSION['id_user'],$_POST['objet'],$_POST['message'])){
+            echo 'message envoyé';
+        }
+        else echo 'echec de l\'envoi';
+    
+}
+?>
+
 <html>
     <head>
     	<meta http-equiv="content-type" content="text/html; charset=utf-8" />

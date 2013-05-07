@@ -30,6 +30,24 @@ function insertUser($lastname,$firstname,$email,$password,$tel,$number,$adress,$
 	return $request;
 }
 
+function insertMessage($id_user,$objet,$message){
+
+	if(empty($objet) || empty($message))return false;
+	$objet = mysql_escape_string(htmlspecialchars($objet));
+	$message = mysql_escape_string(htmlspecialchars($message));
+
+	$sql = "INSERT INTO message(objet,message,id_user) VALUES('$objet','$message','$id_user')";
+	if(!mysql_query($sql)){
+            echo 'FAIL';
+            return 0;   
+        }else{
+            echo 'SUCCEED <br/>';
+            return 1;   
+        }
+        	$request = mysql_query($sql);
+	return $request;
+}
+
 /* retouve l'id de l'utilisateur lorsqu'il se connecte */
 function getUserIdAtLogin($mail,$password){
 	if(empty($mail) || empty($password))return false;
